@@ -2,19 +2,26 @@ import React from 'react'
 import { Text, View } from '../components/Themed';
 import { StyleSheet, Image, SafeAreaView, ScrollView, Button } from 'react-native';
 import Rallyes from '../Helpers/RallyesData';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
 
-class AccueilRallye extends React.Component {
+type Props = StackScreenProps<RootStackParamList, 'AccueilRallye'>;
+
+export class AccueilRallye extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
   render() {
     const rallyes = Rallyes; // Base de données 
-    var id;
-    var x;
+    var id: any;
+    var x: any;
     for (x in rallyes) {
-      if (rallyes[x].nom == this.props.navigation.state.params.nom) {
+      if (rallyes[x].nom == this.props.route.params.nom) {
         id = x;
       }
     }
     return (
-      <SafeAreaView style={styles.main_container}>
+      <View style={styles.main_container}>
         <ScrollView>
           <View style={styles.main_container_2}>
             <Image
@@ -27,6 +34,9 @@ class AccueilRallye extends React.Component {
               </View>
               <View style={styles.description_container}>
                 <Text style={styles.date_text}>Durée : {rallyes[id].duree}</Text>
+                <View style={styles.button}>
+                   <Button title="Passer la partie Histoire" onPress={() => {this.props.navigation.navigate("Regles", { id })}}/>
+                </View>
                 <View style={styles.description_container_bis}> 
                   <Text style={styles.description_text}>{rallyes[id].description}</Text>
                 </View>
@@ -37,15 +47,14 @@ class AccueilRallye extends React.Component {
             </View>
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     )
   }  
 }
 
 const styles = StyleSheet.create({
   main_container: {
-    flex: 1,
-    backgroundColor: 'white'
+    flex: 1
   },
   main_container_2: {
     marginTop: 20,
@@ -54,7 +63,6 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 200,
-    backgroundColor: 'gray',
     alignSelf: 'center'
   },
   container: {
@@ -98,4 +106,3 @@ const styles = StyleSheet.create({
   }
 })
 
-export default AccueilRallye

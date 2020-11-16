@@ -1,21 +1,25 @@
 import React from 'react';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { View, StyleSheet} from 'react-native';
+import { StyleSheet} from 'react-native';
+import { View } from '../components/Themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Rallyes from '../Helpers/RallyesData';
 
+export interface Props {
+    displayCity: Function
+  }
 
-class BarreRecherche extends React.Component {
+export class BarreRecherche extends React.Component<Props> {
     render() {
         const { displayCity } = this.props;
         const rallyes = Rallyes; // Base de données 
         var x;
         
         // Distance Matrix API 
-        function Distance(place_id_origin, nom) {
+        function Distance(place_id_origin: string) {
             var place_id_destination = []; 
             for (x in rallyes) {
-                place_id_destination.push("place_id:" + data[x].place_id)
+                place_id_destination.push("place_id:" + rallyes[x].place_id)
             }
             var place_id_origine = 'place_id:' + place_id_origin
             var distance = require('react-native-google-matrix');
@@ -25,15 +29,14 @@ class BarreRecherche extends React.Component {
                 origin: place_id_origine,
                 destinations: place_id_destination
             },
-            function(err, data) {
-                displayCity(nom, data)
+            function(err: object, data: object) {
+                displayCity(data)
             }
             );  
         }
         
         return (
             <View style={styles.container}>
-                
                 <GooglePlacesAutocomplete
                     placeholder='Saisir une ville à proximité'
                     minLength={2}
@@ -49,13 +52,8 @@ class BarreRecherche extends React.Component {
                     enablePoweredByContainer={false}
                     enableHighAccuracyLocation={true}
                     onPress={(data) => {
-                        console.log(data)
                         var place_id = data['place_id'];
-                        var nom = data['name'];
-                        if (nom == null) {
-                            nom = data['structured_formatting']['main_text']
-                        }
-                        Distance(place_id, nom)
+                        Distance(place_id)
                     }}
                     query={{
                         key: 'AIzaSyDcxO2UB2tPBIXSEqpHRGv5o1zeHtTjPPI',
@@ -80,13 +78,11 @@ class BarreRecherche extends React.Component {
                           marginLeft: 5,
                           marginRight:10,
                           backgroundColor: '#F2F3F4',
-                          color: '#010101',
                           fontSize: 18,
                           borderRadius: 30,
                         }
                       }}
                 />
-              
             </View>
         );
     }
@@ -98,5 +94,3 @@ const styles = StyleSheet.create({
     marginTop:20
   }
 });
-
-export default BarreRecherche;

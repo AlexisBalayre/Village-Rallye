@@ -1,37 +1,35 @@
 import React from 'react'
 import { Text, View } from '../components/Themed';
 import { StyleSheet } from 'react-native'
-import BarreRecherche from '../Components/BarreRecherche'
-import Rallyes from '../Helpers/RallyesData';
+import { BarreRecherche } from '../components/BarreRecherche'
+import { RootStackParamList } from '../types';
+import { StackScreenProps } from '@react-navigation/stack';
 
-class Accueil extends React.Component {
-  _displayCity = (nom, data) => {
-    const rallyes = Rallyes; // Base de données 
-    var x;
-    var present = false;
-    for (x in rallyes) {
-      if (rallyes[x].nom == nom) {
-        present = true;
-      }
-    }
-    if (present == true) {
-      this.props.navigation.navigate("AccueilRallye", { nom })
-    }
-    else {
-      this.props.navigation.navigate("RallyesDisponibles", { nom, data }) 
-    }
+type Props = StackScreenProps<RootStackParamList, 'Accueil'>;
+
+export class Accueil extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
+
+  _displayCity = (data: {
+    distance: string,
+    distanceValue: number
+  }[]) => {
+    this.props.navigation.navigate("RallyesDisponibles", { data }) 
   } 
+
   render() {
     return (
       <View style={styles.main_container}>
         <Text style={styles.titre}>
-            Bienvenue dans la Vallée de Cheuvreuse !
+            Bienvenue sur village-rallye, l'application qui permet de découvrir tout en marchant, les plus beaux sites et villages français !
         </Text>
         <View style={styles.container}>
             <Text style={styles.titre2}>
                   Chercher un rallye 
             </Text>
-            <BarreRecherche style={styles.BarreRecherche} displayCity={this._displayCity}/>
+            <BarreRecherche displayCity={this._displayCity}/>
         </View>
       </View>
     )
@@ -40,26 +38,31 @@ class Accueil extends React.Component {
 
 const styles = StyleSheet.create({
   main_container: {
-    flex: 1,
-    backgroundColor: 'white'
+    flex: 1
   },
   container: {
-    marginTop: 30,
+    marginTop: 10,
     flex:1
   },
+  texte: {
+    marginLeft: 20,
+    marginRight: 20,
+    fontSize: 18,
+
+  },
   titre: {
-    marginTop: 20,
-    fontSize: 31,
+    marginLeft: 20,
+    marginRight: 10,
+    marginTop: 10,
+    fontSize: 26,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'left'
 
   },
   titre2: {
-    marginTop: 20,
+    marginTop: 8,
     fontSize: 25,
     marginLeft: 20,
     marginRight: 20
   }
 })
-
-export default Accueil

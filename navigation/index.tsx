@@ -3,7 +3,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
 
-import NotFoundScreen from '../screens/NotFoundScreen';
+import { Accueil } from '../screens/Accueil'
+import { RallyesDisponibles } from '../screens/RallyesDisponibles'
+import { AccueilRallye } from '../screens/AccueilRallye';
+import { Regles } from '../screens/Regles'
+import { RallyeEtape1 } from '../screens/RallyeEtape1';
+import { RallyeQ1 } from '../screens/RallyeQ1';
+import { RallyeQ2 } from '../screens/RallyeQ2';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -27,8 +33,13 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="Accueil" component={Accueil} />
+      <Stack.Screen name="RallyesDisponibles" component={RallyesDisponibles} />
+      <Stack.Screen name="AccueilRallye" component={AccueilRallye} />
+      <Stack.Screen name="Regles" component={Regles} />
+      <Stack.Screen name="RallyeEtape1" component={RallyeEtape1} />
+      <Stack.Screen name="RallyeQ1" component={RallyeQ1} />
+      <Stack.Screen name="RallyeQ2" component={RallyeQ2} />
     </Stack.Navigator>
   );
 }

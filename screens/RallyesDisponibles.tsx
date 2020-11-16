@@ -2,33 +2,42 @@ import React from 'react'
 import { Text, View } from '../components/Themed';
 import { StyleSheet, FlatList } from 'react-native';
 import Rallyes from '../Helpers/RallyesData';
-import RallyeItem from '../Components/RallyeItem';
+import { RallyeItem } from '../components/RallyeItem';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
 
-class RallyesDisponibles extends React.Component {
+type Props = StackScreenProps<RootStackParamList, 'RallyesDisponibles'>;
+
+export class RallyesDisponibles extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
   // Navigation vers AccueilRallye
-  _displayDetailRallye = (nom) => {
+  _displayDetailRallye = (nom:string) => {
     this.props.navigation.navigate("AccueilRallye", { nom })
   }
 
   render() {
+    var x: any;
     var rallyes = Rallyes;
+    const data = this.props.route.params.data
     // Mise à jour des attributs distances de l'objet Rallye
-    for (x in this.props.navigation.state.params.data) {
-      rallyes[x].distance = this.props.navigation.state.params.data[x].distance 
-      rallyes[x].distancevalue = this.props.navigation.state.params.data[x].distanceValue 
+    for (x in data) {
+      rallyes[x].distance = data[x].distance
+      rallyes[x].distancevalue = data[x].distanceValue 
     };
     // Villes triées par ordre croissant à partir de la distance
     rallyes.sort(function(a, b){return a.distancevalue - b.distancevalue});
     return (
       <View style={styles.main_container}>
         <Text style={styles.titre}>
-          Oups, pas encore de rallye disponible ici !
+          Rallyes à proximité
         </Text>
         <FlatList
             style={styles.container}
             data={rallyes}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({item}) => <RallyeItem rallye={item} ville={this.props.navigation.state.params.nom} displayDetailRallye={this._displayDetailRallye}
+            renderItem={({item}) => <RallyeItem rallye={item} displayDetailRallye={this._displayDetailRallye}
             />}
             onEndReachedThreshold={0.5}
         />
@@ -40,18 +49,18 @@ class RallyesDisponibles extends React.Component {
 const styles = StyleSheet.create({
   main_container: {
     flex: 1,
-    backgroundColor: 'white'
+    alignContent: 'center'
   },
   container: {
     marginTop: 8,
     flex:1, 
   },
   titre: {
-    marginTop: 8,
-    fontSize: 35,
+    marginTop: 18,
+    fontSize: 34,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    textAlignVertical: 'center',
   }
 })
 
-export default RallyesDisponibles

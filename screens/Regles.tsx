@@ -1,15 +1,21 @@
 import React from 'react'
 import { Text, View } from '../components/Themed';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
 
-class Regles extends React.Component {
+type Props = StackScreenProps<RootStackParamList, 'Regles'>;
+
+export class Regles extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
   render() {
-    const id = this.props.navigation.state.params.id;
+    const id = this.props.route.params.id;
     const texte = 'Plusieurs itinéraires seront disponibles. Chacun d’entre eux vous proposera des photos et des questions relatives à l’histoire des sites ou du village.\n\nSur une seule et même application téléchargée, vous pouvez jouer tout seul ou à plusieurs.\nSi vous souhaitez jouer en équipe, chaque chef d’équipe télécharge son application et choisit un itinéraire différent.\n\nA la fin du parcours pédestre (environ 1h30 à 2h) vous obtiendrez les résultats de votre questionnaire.'
     return (
-      <SafeAreaView style={styles.main_container}>
-        <ScrollView>
+      <View style={styles.main_container}>
           <Text style={styles.titre}>
               Règles du jeu
           </Text>
@@ -23,8 +29,7 @@ class Regles extends React.Component {
                   this.props.navigation.navigate("RallyeEtape1", { id })
               }}/>
           </View>
-        </ScrollView>
-      </SafeAreaView>
+      </View>
     )
   }  
 }
@@ -32,7 +37,6 @@ class Regles extends React.Component {
 const styles = StyleSheet.create({
     main_container: {
       flex: 1,
-      backgroundColor: 'white',
     },
     container: {
       marginTop: 30,
@@ -63,4 +67,3 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Regles

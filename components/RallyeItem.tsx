@@ -1,10 +1,24 @@
-import { cpuUsage } from 'process';
 import React from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Text, View } from '../components/Themed';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-class RallyeItem extends React.Component {
+export interface Props {
+  rallye: {
+    nom: string
+    photo1: object
+    title: string
+    distance: string
+    description: string
+  } 
+  displayDetailRallye: Function
+}
+
+export class RallyeItem extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
   render() {
-    const { rallye, ville, displayDetailRallye } = this.props
+    const { rallye, displayDetailRallye } = this.props
     return (
       <TouchableOpacity
         style={styles.main_container}
@@ -19,8 +33,7 @@ class RallyeItem extends React.Component {
             <Text style={styles.title_text}>{rallye.title}</Text>
           </View>
           <View style={styles.info_container}>
-            <Text style={styles.date_text}>Distance de {ville} : {rallye.distance}</Text>
-            <Text style={styles.description_text} numberOfLines={6}>{rallye.description}</Text>
+            <Text style={styles.date_text}>Distance : {rallye.distance}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -29,47 +42,33 @@ class RallyeItem extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    main_container: {
-      height: 200,
-      flexDirection: 'row',
-      paddingLeft: 10,
-      paddingRight: 10,
-      marginTop: 10
-    },
-    image: {
-      width: 110,
-      height: 185
-    },
-    content_container: {
-      flex: 1,
-      marginLeft: 8,
-    },
-    header_container: {
-      flex: 3,
-      flexDirection: 'row'
-    },
-    title_text: {
-      fontWeight: 'bold',
-      fontSize: 18,
-    },
-    vote_text: {
-      fontWeight: 'bold',
-      fontSize: 26,
-      color: '#666666'
-    },
-    info_container: {
-      flex: 8
-    },
-    description_text: {
-      fontStyle: 'italic',
-      color: '#666666',
-      fontSize: 15,
-      marginTop: 8
-    },
-    date_text: {
-      textAlign: 'left',
-      fontSize: 15,
-    }
-  })
-
-export default RallyeItem
+  main_container: {
+    flexDirection: 'row',
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 20, 
+  },
+  image: {
+    width: 90,
+    height: 120
+  },
+  content_container: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  header_container: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  title_text: {
+    fontWeight: 'bold',
+    fontSize: 21,
+  },
+  info_container: {
+    flex: 1
+  },
+  date_text: {
+    textAlign: 'left',
+    fontSize: 19,
+  }
+})
