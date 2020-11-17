@@ -4,6 +4,9 @@ import { StyleSheet } from 'react-native'
 import { BarreRecherche } from '../components/BarreRecherche'
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
+import Constants from 'expo-constants';
+import Rallyes from '../Helpers/RallyesData';
+
 
 type Props = StackScreenProps<RootStackParamList, 'Accueil'>;
 
@@ -38,7 +41,8 @@ export class Accueil extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   main_container: {
-    flex: 1
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
   },
   container: {
     marginTop: 10,

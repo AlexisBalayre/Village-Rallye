@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import { Accueil } from '../screens/Accueil';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, AccueilParamList, TabTwoParamList, AccueilRallyeParamList, RallyesDisponiblesParamList } from '../types';
+import { BottomTabParamList, AccueilParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 

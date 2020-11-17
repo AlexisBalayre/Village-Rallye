@@ -5,6 +5,7 @@ import Rallyes from '../Helpers/RallyesData';
 import { RallyeItem } from '../components/RallyeItem';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyesDisponibles'>;
 
@@ -49,7 +50,8 @@ export class RallyesDisponibles extends React.Component<Props> {
 const styles = StyleSheet.create({
   main_container: {
     flex: 1,
-    alignContent: 'center'
+    alignContent: 'center',
+    paddingTop: Constants.statusBarHeight,
   },
   container: {
     marginTop: 8,

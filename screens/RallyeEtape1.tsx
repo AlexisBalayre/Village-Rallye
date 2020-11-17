@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyeEtape1'>;
 
@@ -52,7 +53,8 @@ export class RallyeEtape1 extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     main_container: {
-      flex: 1
+      flex: 1,
+      paddingTop: Constants.statusBarHeight,
     },
     container: {
       marginTop: 50,

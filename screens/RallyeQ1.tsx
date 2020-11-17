@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements';
 import Rallyes from '../Helpers/RallyesData';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyeQ1'>;
 
@@ -17,7 +18,25 @@ export class RallyeQ1 extends React.Component<Props> {
     const id = this.props.route.params.id;
     const rallyes = Rallyes; // Base de données 
     var rallyes_reponse = {
-      Q1: ''
+      Q1: '',
+      Q2: '',
+      Q3: '',
+      Q4: '',
+      Q5: '',
+      Q6: '',
+      Q7: '',
+      Q8: '',
+      Q9: '',
+      Q10: '',
+      Q11: '',
+      Q12: '',
+      Q13: '',
+      Q14: '',
+      Q16: '',
+      Q17: '',
+      Q18: '',
+      Q19: '',
+      Q20: ''
     }
     return (
       <View style={styles.main_container}>
@@ -30,31 +49,31 @@ export class RallyeQ1 extends React.Component<Props> {
             />
         <View style={styles.container}>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}} containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question1.reponse1} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height: 45}} containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question1.reponse1} onPress={() => {
                   rallyes_reponse.Q1 = 'A';
                   this.props.navigation.navigate("RallyeQ2", { id, id_parcours, rallyes_reponse })
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question1.reponse2} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question1.reponse2} onPress={() => {
                   rallyes_reponse.Q1 = 'B';
                   this.props.navigation.navigate("RallyeQ2", { id, id_parcours, rallyes_reponse })
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question1.reponse3} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question1.reponse3} onPress={() => {
                   rallyes_reponse.Q1 = 'C';
                   this.props.navigation.navigate("RallyeQ2", { id, id_parcours, rallyes_reponse })
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question1.reponse4} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question1.reponse4} onPress={() => {
                   rallyes_reponse.Q1 = 'D';
                   this.props.navigation.navigate("RallyeQ2", { id, id_parcours, rallyes_reponse })
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question1.reponse5} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question1.reponse5} onPress={() => {
                   rallyes_reponse.Q1 = 'E';
                   this.props.navigation.navigate("RallyeQ2", { id, id_parcours, rallyes_reponse })
               }}/>
@@ -69,10 +88,12 @@ const styles = StyleSheet.create({
     main_container: {
       flex: 1,
       paddingLeft: 20,
-      paddingRight: 20
+      paddingRight: 20,
+      paddingTop: Constants.statusBarHeight,
+      paddingBottom: Constants.statusBarHeight,
     },
     container: {
-      flex:3,
+      flex:1,
       paddingLeft: 20,
       paddingRight: 20
     },
@@ -90,6 +111,7 @@ const styles = StyleSheet.create({
       textAlign: 'left',
     },
     button: {
+      flex: 1,
       marginTop: 18
     }
 })

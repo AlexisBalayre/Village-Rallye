@@ -4,6 +4,7 @@ import { StyleSheet, Image, SafeAreaView, ScrollView, Button } from 'react-nativ
 import Rallyes from '../Helpers/RallyesData';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'AccueilRallye'>;
 
@@ -54,11 +55,12 @@ export class AccueilRallye extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   main_container: {
-    flex: 1
+    flex: 1,
+    paddingTop: Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight,
   },
   main_container_2: {
     marginTop: 20,
-    marginBottom: 20
   },
   image: {
     width: 300,

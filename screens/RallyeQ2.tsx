@@ -5,6 +5,7 @@ import { Button } from 'react-native-elements';
 import Rallyes from '../Helpers/RallyesData';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyeQ2'>;
 
@@ -30,22 +31,22 @@ export class RallyeQ2 extends React.Component<Props> {
         </Text>
         <View style={styles.container}>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}} containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question2.reponse1} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height:45}} containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question2.reponse1} onPress={() => {
                   rallyes_reponse.Q2 = 'A';
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question2.reponse2} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question2.reponse2} onPress={() => {
                   rallyes_reponse.Q2 = 'B';
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question2.reponse3} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question2.reponse3} onPress={() => {
                   rallyes_reponse.Q2 = 'C';
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:40}}  containerStyle={{borderRadius: 20}} title={rallyes[id].rallye.question2.reponse4} onPress={() => {
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallyes[id].rallye.question2.reponse4} onPress={() => {
                   rallyes_reponse.Q2 = 'D';
               }}/>
           </View>
@@ -61,12 +62,13 @@ const styles = StyleSheet.create({
       flex: 1,
       paddingLeft: 20,
       paddingRight: 20,
+      paddingTop: Constants.statusBarHeight,
+      paddingBottom: Constants.statusBarHeight,
     },
     container: {
       flex:1,
       paddingLeft: 20,
       paddingRight: 20,
-      paddingBottom: 20
     },
     image: {
       flex:1,

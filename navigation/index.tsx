@@ -11,7 +11,6 @@ import { RallyeEtape1 } from '../screens/RallyeEtape1';
 import { RallyeQ1 } from '../screens/RallyeQ1';
 import { RallyeQ2 } from '../screens/RallyeQ2';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
 // If you are not familiar with React Navigation, we recommend going through the

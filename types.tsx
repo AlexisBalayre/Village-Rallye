@@ -17,7 +17,6 @@ export type RootStackParamList = {
     id: number
   };
   rallyes: {
-    id: number,
        title: string,
        nom: string,
        place_id: string,
@@ -47,7 +46,7 @@ export type RootStackParamList = {
             reponse4: string,
         }
       }
-  }[];
+  };
   RallyeQ1: {
     id: number, 
     id_parcours: number
