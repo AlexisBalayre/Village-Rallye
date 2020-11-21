@@ -4,6 +4,7 @@ import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export interface Props {
   rallye: {
+    id: number
     nom: string
     photo1: object
     title: string
@@ -22,8 +23,8 @@ export class RallyeItem extends React.Component<Props> {
     return (
       <TouchableOpacity
         style={styles.main_container}
-        onPress={() =>{
-         displayDetailRallye(rallye.nom)}}>
+        onPress={() => {
+         displayDetailRallye(rallye.id)}}>
         <Image
           style={styles.image}
           source={rallye.photo1}

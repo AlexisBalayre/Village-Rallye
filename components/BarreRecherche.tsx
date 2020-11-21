@@ -10,11 +10,15 @@ export interface Props {
   }
 
 export class BarreRecherche extends React.Component<Props> {
+    constructor(props: Props) {
+        super(props)
+    }
+
     render() {
         const { displayCity } = this.props;
-        const rallyes = Rallyes; // Base de données 
-        var x;
-        
+        var rallyes = Rallyes; // Base de données 
+        var x: any; 
+        const DistanceMax = 50000; // Distance maximale des rallyes 
         // Distance Matrix API 
         function Distance(place_id_origin: string) {
             var place_id_destination = []; 
@@ -29,12 +33,31 @@ export class BarreRecherche extends React.Component<Props> {
                 origin: place_id_origine,
                 destinations: place_id_destination
             },
-            function(err: object, data: object) {
-                displayCity(data)
+            // Calcul des distances
+            function(err: object, data: {
+                distance: string
+                distanceValue: number
+            }[]) {
+                // Initialisation de la liste de rallyes
+                var list_rallye = [];
+                // Mise à jour des attributs distances de l'objet Rallye
+                for (x in data) {
+                    rallyes[x].distance = data[x].distance
+                    rallyes[x].distancevalue = data[x].distanceValue 
+                };
+                // Remplissage liste d'objets Rallye 
+                for (x in rallyes) {
+                    if (rallyes[x].distancevalue <= DistanceMax) {
+                        list_rallye.push(rallyes[x])
+                    }   
+                }
+                // Tri de la liste en fonction de la distance
+                list_rallye.sort(function(a, b){return a.distancevalue - b.distancevalue});
+                // Fonction de navigation vers RallyesDisponibles
+                displayCity(list_rallye)
             }
             );  
         }
-        
         return (
             <View style={styles.container}>
                 <GooglePlacesAutocomplete
@@ -79,7 +102,7 @@ export class BarreRecherche extends React.Component<Props> {
                           marginRight:10,
                           backgroundColor: '#F2F3F4',
                           fontSize: 18,
-                          borderRadius: 30,
+                          borderRadius: 30
                         }
                       }}
                 />

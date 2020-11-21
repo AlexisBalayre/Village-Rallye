@@ -2,57 +2,151 @@ export type RootStackParamList = {
   Root: undefined;
   Accueil: undefined;
   RallyesDisponibles: {
-    data: {
-      distance: string,
-      distanceValue: number
-    }[];
+    list_rallye: []
   };
+  RallyeIndisponible: undefined;
   AccueilRallye: {
-    nom: string
+    id: number
   };
   Regles: {
-    id: number
+    rallye: object,
   };
+
+  rallye: {
+    id: number,
+    title: string,
+    nom: string,
+    place_id: string,
+    distance: string,
+    distancevalue: number,
+    duree: string,
+    description: string,
+    statut: string,
+    photo1: object,
+    photo2: object,
+    rallye: {
+     question1: {
+         photo: object,
+         enonce: string,
+         reponse1: string,
+         reponse2: string,
+         reponse3: string,
+         reponse4: string,
+         reponse5: string,
+     },
+     question2: {
+         photo: object,
+         enonce: string,
+         reponse1: string,
+         reponse2: string,
+         reponse3: string,
+         reponse4: string,
+     }
+   }
+  };
+
   RallyeEtape1: {
-    id: number
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: {
+       question1: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+           reponse5: string,
+       },
+       question2: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+       }
+     }
   };
-  rallyes: {
-       title: string,
-       nom: string,
-       place_id: string,
-       distance: string,
-       distancevalue: number,
-       duree: string,
-       description: string,
-       statut: string,
-       photo1: object,
-       photo2: object,
-       rallye: {
-        question1: {
-            photo: object,
-            enonce: string,
-            reponse1: string,
-            reponse2: string,
-            reponse3: string,
-            reponse4: string,
-            reponse5: string,
-        },
-        question2: {
-            photo: object,
-            enonce: string,
-            reponse1: string,
-            reponse2: string,
-            reponse3: string,
-            reponse4: string,
-        }
-      }
   };
   RallyeQ1: {
-    id: number, 
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: {
+       question1: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+           reponse5: string,
+       },
+       question2: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+       }
+     }
+ };
     id_parcours: number
   }
   RallyeQ2: {
-    id: number, 
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: {
+       question1: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+           reponse5: string,
+       },
+       question2: {
+           photo: object,
+           enonce: string,
+           reponse1: string,
+           reponse2: string,
+           reponse3: string,
+           reponse4: string,
+       }
+     }
+    };
     id_parcours: number,
     rallyes_reponse: {
       Q1: string,

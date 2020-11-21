@@ -5,6 +5,7 @@ import { ColorSchemeName } from 'react-native';
 
 import { Accueil } from '../screens/Accueil'
 import { RallyesDisponibles } from '../screens/RallyesDisponibles'
+import { RallyeIndisponible } from '../screens/RallyeIndisponible'
 import { AccueilRallye } from '../screens/AccueilRallye';
 import { Regles } from '../screens/Regles'
 import { RallyeEtape1 } from '../screens/RallyeEtape1';
@@ -31,14 +32,15 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Accueil" component={Accueil} />
-      <Stack.Screen name="RallyesDisponibles" component={RallyesDisponibles} />
-      <Stack.Screen name="AccueilRallye" component={AccueilRallye} />
-      <Stack.Screen name="Regles" component={Regles} />
-      <Stack.Screen name="RallyeEtape1" component={RallyeEtape1} />
-      <Stack.Screen name="RallyeQ1" component={RallyeQ1} />
-      <Stack.Screen name="RallyeQ2" component={RallyeQ2} />
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen name="Accueil" component={Accueil} options={{ headerShown: false }}/>
+      <Stack.Screen name="RallyesDisponibles" component={RallyesDisponibles} options={{ title: 'Rallyes disponibles' }}/>
+      <Stack.Screen name="RallyeIndisponible" component={RallyeIndisponible} options={{ title: 'Rallyes indisponibles' }}/>
+      <Stack.Screen name="AccueilRallye" component={AccueilRallye} options={{ title: 'Accueil Rallye' }}/>
+      <Stack.Screen name="Regles" component={Regles} options={{ title: 'Règles' }}/>
+      <Stack.Screen name="RallyeEtape1" component={RallyeEtape1} options={{ title: 'Parcours' }}/>
+      <Stack.Screen name="RallyeQ1" component={RallyeQ1} options={{ title: 'Question 1', headerLeft: () => null }}/>
+      <Stack.Screen name="RallyeQ2" component={RallyeQ2} options={{ title: 'Question 2', headerLeft: () => null }}/>
     </Stack.Navigator>
   );
 }

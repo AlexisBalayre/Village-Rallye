@@ -28,6 +28,11 @@ export default {
           RallyesDisponibles: 'Rallyes Disponibles',
         },
       },
+      RallyeIndisponible: {
+        screens: {
+          RallyeIndisponible: 'Rallyes Indisponibles',
+        },
+      },
       AccueilRallye: {
         screens: {
           AccueilRallye: 'Accueil Rallye',

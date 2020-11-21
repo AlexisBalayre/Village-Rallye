@@ -5,7 +5,6 @@ import { BarreRecherche } from '../components/BarreRecherche'
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
-import Rallyes from '../Helpers/RallyesData';
 
 
 type Props = StackScreenProps<RootStackParamList, 'Accueil'>;
@@ -15,11 +14,13 @@ export class Accueil extends React.Component<Props> {
     super(props)
   }
 
-  _displayCity = (data: {
-    distance: string,
-    distanceValue: number
-  }[]) => {
-    this.props.navigation.navigate("RallyesDisponibles", { data }) 
+  _displayCity = (list_rallye: []) => {
+    if (list_rallye.length == 0) {
+      this.props.navigation.navigate("RallyeIndisponible") 
+    }
+    else {
+      this.props.navigation.navigate("RallyesDisponibles", { list_rallye }) 
+    }
   } 
 
   render() {

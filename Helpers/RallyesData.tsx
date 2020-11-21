@@ -1,6 +1,6 @@
-var data = [
-    {
-       id: 0,
+var data = {
+    0: {
+       id: 0, 
        title: "RALLYE PEDESTRE GROSROUVRE",
        nom: "Grosrouvre",
        place_id: "ChIJQSnlfzOf5kcR3V5dvraLqn0",
@@ -12,6 +12,7 @@ var data = [
        photo1: require("../assets/images/Grosrouvre/Grosrouvre.png"),
        photo2: require("../assets/images/Grosrouvre/Grosrouvre_2.png"),
        rallye: {
+        statut: false,
         question1: {
             photo: '',
             enonce: 'Tournez le dos à l’église et remontez la place, arrivé devant un buste (voir photo), qui représente-t-il ?',
@@ -31,7 +32,7 @@ var data = [
         }
       }
     },
-    {
+    1: {
         id: 1,
         title: "RALLYE PEDESTRE MONTFORT L'AMAURY",
         nom: "Montfort-l'Amaury",
@@ -44,6 +45,7 @@ var data = [
         photo1: require("../assets/images/Montfort/Montfort.png"),
         photo2: require("../assets/images/Montfort/Montfort_2.png"),
         rallye: {
+            statut: true,
             question1: {
                 photo: require("../assets/images/Montfort/question1.png"),
                 enonce: 'Tournez le dos à l’église et remontez la place, arrivé devant un buste (voir photo), qui représente-t-il ?',
@@ -63,7 +65,7 @@ var data = [
             }
         }
     },
-    {
+    2: {
         id: 2,
         title: "RALLYE PEDESTRE RAMBOUILLET",
         nom: "Rambouillet",
@@ -76,6 +78,7 @@ var data = [
         photo1: require("../assets/images/Rambouillet/Rambouillet.png"),
         photo2: require("../assets/images/Rambouillet/Rambouillet_2.png"),
         rallye: {
+            statut: false,
             question1: {
                 photo: '',
                 enonce: 'Tournez le dos à l’église et remontez la place, arrivé devant un buste (voir photo), qui représente-t-il ?',
@@ -95,6 +98,6 @@ var data = [
             }
         }
     }
-]
+}
 
 export default data

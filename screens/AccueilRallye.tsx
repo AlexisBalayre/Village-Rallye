@@ -12,39 +12,34 @@ export class AccueilRallye extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
+  
   render() {
-    const rallyes = Rallyes; // Base de données 
-    var id: any;
-    var x: any;
-    for (x in rallyes) {
-      if (rallyes[x].nom == this.props.route.params.nom) {
-        id = x;
-      }
-    }
+    const id = this.props.route.params.id;
+    const rallye = Rallyes[id]; // Base de données 
     return (
       <View style={styles.main_container}>
         <ScrollView>
           <View style={styles.main_container_2}>
             <Image
               style={styles.image}
-              source={rallyes[id].photo2}
+              source={rallye.photo2}
             />
             <View style={styles.content_container}>
               <View style={styles.header_container}>
-                <Text style={styles.title_text}>{rallyes[id].title}</Text>
+                <Text style={styles.title_text}>{rallye.title}</Text>
               </View>
               <View style={styles.description_container}>
-                <Text style={styles.date_text}>Durée : {rallyes[id].duree}</Text>
+                <Text style={styles.date_text}>Durée : {rallye.duree}</Text>
                 <View style={styles.button}>
-                   <Button title="Passer la partie Histoire" onPress={() => {this.props.navigation.navigate("Regles", { id })}}/>
+                   <Button title="Passer la partie Histoire" onPress={() => {this.props.navigation.navigate("Regles", { rallye })}}/>
                 </View>
                 <View style={styles.description_container_bis}> 
-                  <Text style={styles.description_text}>{rallyes[id].description}</Text>
+                  <Text style={styles.description_text}>{rallye.description}</Text>
                 </View>
               </View>
             </View>
             <View style={styles.button}>
-                <Button title='Voir les règles du jeu' onPress={() => {this.props.navigation.navigate("Regles", { id })}}/>
+                <Button title='Voir les règles du jeu' onPress={() => {this.props.navigation.navigate("Regles", { rallye })}}/>
             </View>
           </View>
         </ScrollView>
@@ -56,7 +51,6 @@ export class AccueilRallye extends React.Component<Props> {
 const styles = StyleSheet.create({
   main_container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
     paddingBottom: Constants.statusBarHeight,
   },
   main_container_2: {

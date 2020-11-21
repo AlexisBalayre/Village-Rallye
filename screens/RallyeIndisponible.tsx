@@ -1,14 +1,14 @@
 import React from 'react'
 import { Text, View } from '../components/Themed';
-import { StyleSheet, FlatList } from 'react-native';
-import { RallyeItem } from '../components/RallyeItem';
+import { StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
+import Rallyes from '../Helpers/RallyesData';
 
 
-type Props = StackScreenProps<RootStackParamList, 'RallyesDisponibles'>;
+type Props = StackScreenProps<RootStackParamList, 'RallyeIndisponible'>;
 
-export class RallyesDisponibles extends React.Component<Props> {
+export class RallyeIndisponible extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
@@ -19,20 +19,12 @@ export class RallyesDisponibles extends React.Component<Props> {
   }
 
   render() {
-    const list_rallye = this.props.route.params.list_rallye
+    const rallye = Rallyes; // Base de données 
     return (
       <View style={styles.main_container}>
         <Text style={styles.titre}>
-          Rallyes à proximité
+          Pas de rallyes à proximité ! 
         </Text>
-        <FlatList
-            style={styles.container}
-            data={list_rallye}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item}) => <RallyeItem rallye={item} displayDetailRallye={this._displayDetailRallye}
-            />}
-            onEndReachedThreshold={0.5}
-        />
       </View>
     )
   }

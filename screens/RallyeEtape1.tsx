@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
-import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyeEtape1'>;
 
@@ -12,8 +11,9 @@ export class RallyeEtape1 extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
+
   render() {
-    const id = this.props.route.params.id;
+    const rallye = this.props.route.params.rallye;
     var id_parcours;
     return (
       <View style={styles.main_container}>
@@ -24,25 +24,25 @@ export class RallyeEtape1 extends React.Component<Props> {
             <View style={styles.button}>
                 <Button buttonStyle={{borderRadius: 30, height:60}} containerStyle={{borderRadius: 30}} title='Parcours 1' onPress={() => {
                     id_parcours=1;
-                    this.props.navigation.navigate("RallyeQ1", { id, id_parcours })
+                    this.props.navigation.navigate("RallyeQ1", { rallye, id_parcours })
                 }}/>
             </View>
             <View style={styles.button}>
                 <Button buttonStyle={{borderRadius: 30, height:60}}  containerStyle={{borderRadius: 30}} title='Parcours 2' onPress={() => {
                     id_parcours=2;
-                    this.props.navigation.navigate("RallyeQ1", { id, id_parcours })
+                    this.props.navigation.navigate("RallyeQ1", { rallye, id_parcours })
                 }}/>
             </View>
             <View style={styles.button}>
                 <Button buttonStyle={{borderRadius: 30, height:60}}  containerStyle={{borderRadius: 30}} title='Parcours 3' onPress={() => {
                     id_parcours=3;
-                    this.props.navigation.navigate("RallyeQ1", { id, id_parcours })
+                    this.props.navigation.navigate("RallyeQ1", { rallye, id_parcours })
                 }}/>
             </View>
             <View style={styles.button}>
                 <Button buttonStyle={{borderRadius: 30, height:60}}  containerStyle={{borderRadius: 30}} title='Parcours 4' onPress={() => {
                     id_parcours=4;
-                    this.props.navigation.navigate("RallyeQ1", { id, id_parcours })
+                    this.props.navigation.navigate("RallyeQ1", { rallye, id_parcours })
                 }}/>
             </View>
         </View>
@@ -54,7 +54,6 @@ export class RallyeEtape1 extends React.Component<Props> {
 const styles = StyleSheet.create({
     main_container: {
       flex: 1,
-      paddingTop: Constants.statusBarHeight,
     },
     container: {
       marginTop: 50,
