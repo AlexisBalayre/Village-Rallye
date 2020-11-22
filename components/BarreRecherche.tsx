@@ -1,6 +1,6 @@
 import React from 'react';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Rallyes from '../Helpers/RallyesData';
@@ -11,8 +11,15 @@ export interface Props {
 
 export class BarreRecherche extends React.Component<Props> {
     constructor(props: Props) {
-        super(props)
+        super(props);
+        this.ref = React.createRef();
     }
+
+    componentDidMount() {
+        if(this.ref.current) {
+          this.ref.current.focus();
+        }
+      }
 
     render() {
         const { displayCity } = this.props;
@@ -61,14 +68,16 @@ export class BarreRecherche extends React.Component<Props> {
         return (
             <View style={styles.container}>
                 <GooglePlacesAutocomplete
+                    ref={this.ref}
                     placeholder='Saisir une ville à proximité'
                     minLength={2}
-                    autoFocus={false}
+                    autoFocus={true}
                     returnKeyType={'Search'}
                     renderLeftButton={()  => <Icon name="search" size={18} color='#9F9F9F' style={{
                         paddingTop: 17,
                         marginLeft: 20
                     }}/>}
+                    keyboardShouldPersistTaps='always'
                     currentLocation={true}
                     currentLocationLabel="Ma position"
                     fetchDetails={true}

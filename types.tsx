@@ -1,6 +1,8 @@
 export type RootStackParamList = {
   Root: undefined;
+  Main: undefined;
   Accueil: undefined;
+  RechercheScreen: undefined;
   RallyesDisponibles: {
     list_rallye: []
   };
@@ -11,7 +13,6 @@ export type RootStackParamList = {
   Regles: {
     rallye: object,
   };
-
   rallye: {
     id: number,
     title: string,
@@ -195,8 +196,3 @@ export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
 
-
-export type RallyeParamList = {
-  nom: string;
-  data: object;
-};

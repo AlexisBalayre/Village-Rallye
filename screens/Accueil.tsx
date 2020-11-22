@@ -1,10 +1,12 @@
 import React from 'react'
 import { Text, View } from '../components/Themed';
 import { StyleSheet } from 'react-native'
-import { BarreRecherche } from '../components/BarreRecherche'
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 type Props = StackScreenProps<RootStackParamList, 'Accueil'>;
@@ -13,15 +15,6 @@ export class Accueil extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
-
-  _displayCity = (list_rallye: []) => {
-    if (list_rallye.length == 0) {
-      this.props.navigation.navigate("RallyeIndisponible") 
-    }
-    else {
-      this.props.navigation.navigate("RallyesDisponibles", { list_rallye }) 
-    }
-  } 
 
   render() {
     return (
@@ -33,7 +26,23 @@ export class Accueil extends React.Component<Props> {
             <Text style={styles.titre2}>
                   Chercher un rallye 
             </Text>
-            <BarreRecherche displayCity={this._displayCity}/>
+            <View style={styles.Searchcontainer}>
+              <Button
+                icon={
+                  <Icon
+                    name="search"
+                    size={18}
+                    color="#959595"
+                    style={{marginLeft:10}}
+                  />
+                }
+                buttonStyle={styles.button}
+                containerStyle={styles.textInputContainer}
+                title="Saisir une ville à proximité"
+                titleStyle={styles.textInput}
+                onPress={() => this.props.navigation.navigate('RechercheScreen')}
+              />
+            </View>
         </View>
       </View>
     )
@@ -44,6 +53,32 @@ const styles = StyleSheet.create({
   main_container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
+  },
+  button:{
+    backgroundColor: '#F1F1F1',
+    height: 55,
+    borderRadius: 30,
+    marginLeft: 10,
+    marginRight: 10
+
+  },
+  Searchcontainer: {
+    marginTop: 20,
+    flex: 1
+  },
+  textInputContainer: {
+    flex:1,
+    height: 55,
+    borderRadius: 30,
+    marginLeft: 10,
+    marginRight: 10
+  },
+  textInput: {
+    flex: 1,
+    textAlign: 'left',
+    color: '#959595',
+    marginLeft: 15,
+    fontSize: 19,
   },
   container: {
     marginTop: 10,

@@ -4,6 +4,7 @@ import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
 
 import { Accueil } from '../screens/Accueil'
+import { RechercheScreen } from '../screens/RechercheScreen'
 import { RallyesDisponibles } from '../screens/RallyesDisponibles'
 import { RallyeIndisponible } from '../screens/RallyeIndisponible'
 import { AccueilRallye } from '../screens/AccueilRallye';
@@ -21,26 +22,41 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      <RootStackScreen />
     </NavigationContainer>
   );
 }
 
 // A root stack navigator is often used for displaying modals on top of all other content
 // Read more here: https://reactnavigation.org/docs/modal
-const Stack = createStackNavigator<RootStackParamList>();
+const MainStack = createStackNavigator<RootStackParamList>();
+const RootStack = createStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
+function MainStackScreen() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
-      <Stack.Screen name="Accueil" component={Accueil} options={{ headerShown: false }}/>
-      <Stack.Screen name="RallyesDisponibles" component={RallyesDisponibles} options={{ title: 'Rallyes disponibles' }}/>
-      <Stack.Screen name="RallyeIndisponible" component={RallyeIndisponible} options={{ title: 'Rallyes indisponibles' }}/>
-      <Stack.Screen name="AccueilRallye" component={AccueilRallye} options={{ title: 'Accueil Rallye' }}/>
-      <Stack.Screen name="Regles" component={Regles} options={{ title: 'Règles' }}/>
-      <Stack.Screen name="RallyeEtape1" component={RallyeEtape1} options={{ title: 'Parcours' }}/>
-      <Stack.Screen name="RallyeQ1" component={RallyeQ1} options={{ title: 'Question 1', headerLeft: () => null }}/>
-      <Stack.Screen name="RallyeQ2" component={RallyeQ2} options={{ title: 'Question 2', headerLeft: () => null }}/>
-    </Stack.Navigator>
+    <MainStack.Navigator>
+      <MainStack.Screen name="Accueil" component={Accueil} options={{ headerShown: false }}/>
+      <MainStack.Screen name="RallyesDisponibles" component={RallyesDisponibles} options={{ title: 'Rallyes disponibles' }}/>
+      <MainStack.Screen name="RallyeIndisponible" component={RallyeIndisponible} options={{ title: 'Rallyes indisponibles' }}/>
+      <MainStack.Screen name="AccueilRallye" component={AccueilRallye} options={{ title: 'Accueil Rallye' }}/>
+      <MainStack.Screen name="Regles" component={Regles} options={{ title: 'Règles' }}/>
+      <MainStack.Screen name="RallyeEtape1" component={RallyeEtape1} options={{ title: 'Parcours' }}/>
+      <MainStack.Screen name="RallyeQ1" component={RallyeQ1} options={{ title: 'Question 1', headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ2" component={RallyeQ2} options={{ title: 'Question 2', headerLeft: () => null }}/>
+    </MainStack.Navigator>
   );
 }
+
+function RootStackScreen() {
+  return (
+    <RootStack.Navigator mode="modal">
+      <RootStack.Screen
+        name="Main"
+        component={MainStackScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen name="RechercheScreen" component={RechercheScreen} options={{ headerShown: false }}/>
+    </RootStack.Navigator>
+  );
+}
+
