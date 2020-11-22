@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
   },
   Button: {
-    flexDirection: 'row'
+    flex:1,
+    alignContent: 'center',
+    flexDirection: 'row',
+    marginTop: 27,
+    
   }
 })

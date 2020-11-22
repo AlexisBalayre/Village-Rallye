@@ -4,9 +4,10 @@ import { StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Rallyes from '../Helpers/RallyesData';
+import Constants from 'expo-constants';
 
 export interface Props {
-    displayCity: Function
+    displayCity: Function;
   }
 
 export class BarreRecherche extends React.Component<Props> {
@@ -70,7 +71,7 @@ export class BarreRecherche extends React.Component<Props> {
                 <GooglePlacesAutocomplete
                     ref={this.ref}
                     placeholder='Saisir une ville à proximité'
-                    minLength={2}
+                    minLength={1}
                     autoFocus={true}
                     returnKeyType={'Search'}
                     renderLeftButton={()  => <Icon name="search" size={18} color='#9F9F9F' style={{
@@ -112,7 +113,30 @@ export class BarreRecherche extends React.Component<Props> {
                           backgroundColor: '#F2F3F4',
                           fontSize: 18,
                           borderRadius: 30
-                        }
+                        },
+                        poweredContainer: {
+                            alignItems: 'center',
+                            borderBottomRightRadius: 5,
+                            borderBottomLeftRadius: 5,
+                            borderTopWidth: 0.5,
+                        },
+                        row: {
+                            padding: 13,
+                            height: 44,
+                            flexDirection: 'row'
+                          },
+                          separator: {
+                            height: 0.5,
+                          },
+                        container: {
+                            flex:1
+                        },
+                        listView: {
+                            flex:1,
+                        },
+                        loader: {
+                            flex:1,
+                          },
                       }}
                 />
             </View>
@@ -122,7 +146,7 @@ export class BarreRecherche extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    marginTop:20
+    flex:3,
+    marginTop: 20,
   }
 });
