@@ -39,14 +39,10 @@ export class RechercheScreen extends React.Component<Props> {
 const styles = StyleSheet.create({
   main_container: {
     flex: 1,
-    flexDirection: 'row',
     paddingTop: Constants.statusBarHeight,
   },
   Button: {
     flex:1,
     alignContent: 'center',
-    flexDirection: 'row',
-    marginTop: 27,
-    
   }
 })

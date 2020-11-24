@@ -3,6 +3,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Button } from 'react-native-elements';
 import Rallyes from '../Helpers/RallyesData';
 import Constants from 'expo-constants';
 
@@ -115,27 +116,29 @@ export class BarreRecherche extends React.Component<Props> {
                           borderRadius: 30
                         },
                         poweredContainer: {
+                            flex:1,
                             alignItems: 'center',
                             borderBottomRightRadius: 5,
                             borderBottomLeftRadius: 5,
                             borderTopWidth: 0.5,
                         },
                         row: {
-                            padding: 13,
-                            height: 44,
+                            flex:1,
+                            height: "100%", 
                             flexDirection: 'row'
                           },
                           separator: {
                             height: 0.5,
                           },
                         container: {
-                            flex:1
+                            flex:1,
                         },
                         listView: {
+                            marginTop:10,
                             flex:1,
                         },
                         loader: {
-                            flex:1,
+                            alignItems: 'baseline',
                           },
                       }}
                 />
@@ -146,7 +149,7 @@ export class BarreRecherche extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex:3,
+    flex:1,
     marginTop: 20,
   }
 });
