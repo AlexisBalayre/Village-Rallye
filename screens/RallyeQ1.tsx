@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View } from '../components/Themed';
-import { StyleSheet, Image} from 'react-native';
-import { Button } from 'react-native-elements';
+import { StyleSheet, Image, ScrollView} from 'react-native';
+import { Button, Overlay } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 import Constants from 'expo-constants';
@@ -38,45 +38,42 @@ export class RallyeQ1 extends React.Component<Props> {
     };
     return (
       <View style={styles.main_container}>
-        <Text style={styles.texte}>
-          {rallye.rallye.question1.enonce}
-        </Text>
-        <Image
-              style={styles.image}
-              source={rallye.rallye.question1.photo}
-            />
-        <View style={styles.container}>
-          <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height: 45}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse1} onPress={() => {
-                  rallyes_reponse.Q1 = 'A';
-                  this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse })
-              }}/>
+        <ScrollView>
+          <Image
+            style={styles.image}
+            source={rallye.rallye.question1.photo}
+          />
+          <Text style={styles.texte}>
+            {rallye.rallye.question1.enonce}
+            <Text style={styles.innerText}>{rallye.rallye.question1.question}</Text>
+          </Text>
+          <View style={styles.container}>
+            <View style={styles.button}>
+                <Button buttonStyle={{borderRadius: 20, height: 45}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse1} onPress={() => {
+                    rallyes_reponse.Q1 = 'A';
+                    this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse });
+                }}/>
+            </View>
+            <View style={styles.button}>
+                <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse2} onPress={() => {
+                    rallyes_reponse.Q1 = 'B';
+                    this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse });
+                }}/>
+            </View>
+            <View style={styles.button}>
+                <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse3} onPress={() => {
+                    rallyes_reponse.Q1 = 'C';
+                    this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse });
+                }}/>
+            </View>
+            <View style={styles.button}>
+                <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse4} onPress={() => {
+                    rallyes_reponse.Q1 = 'D';
+                    this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse });
+                }}/>
+            </View>
           </View>
-          <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse2} onPress={() => {
-                  rallyes_reponse.Q1 = 'B';
-                  this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse })
-              }}/>
-          </View>
-          <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse3} onPress={() => {
-                  rallyes_reponse.Q1 = 'C';
-                  this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse })
-              }}/>
-          </View>
-          <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse4} onPress={() => {
-                  rallyes_reponse.Q1 = 'D';
-                  this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse })
-              }}/>
-          </View>
-          <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height: 45 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse5} onPress={() => {
-                  rallyes_reponse.Q1 = 'E';
-                  this.props.navigation.navigate("RallyeQ2", { rallye, id_parcours, rallyes_reponse })
-              }}/>
-          </View>
-        </View>
+        </ScrollView>
       </View>
     )
   }  
@@ -91,16 +88,24 @@ const styles = StyleSheet.create({
     },
     container: {
       flex:1,
+      marginTop: 10,
       paddingLeft: 20,
-      paddingRight: 20
+      paddingRight: 20,
     },
     image: {
+      flex:1,
       marginTop: 15,
       paddingLeft: 20,
       paddingRight: 20,
-      width: 140,
+      width: 330,
       height: 190,
       alignSelf: 'center'
+    },
+    innerText:{
+      marginTop: 15,
+      fontSize: 21,
+      textAlign: 'left',
+      fontWeight: 'bold',
     },
     texte: {
       marginTop: 15,

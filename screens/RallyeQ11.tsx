@@ -6,9 +6,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 import Constants from 'expo-constants';
 
-type Props = StackScreenProps<RootStackParamList, 'RallyeQ7'>;
+type Props = StackScreenProps<RootStackParamList, 'RallyeQ11'>;
 
-export class RallyeQ7 extends React.Component<Props> {
+export class RallyeQ11 extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
@@ -22,35 +22,35 @@ export class RallyeQ7 extends React.Component<Props> {
        <ScrollView>
         <Image
               style={styles.image}
-              source={rallye.rallye.question7.photo}
+              source={rallye.rallye.question11.photo}
         />
          <Text style={styles.texte}>
-          {rallye.rallye.question7.enonce}
-          <Text style={styles.innerText}>{rallye.rallye.question7.question}</Text>
+          {rallye.rallye.question11.enonce}
+          <Text style={styles.innerText}>{rallye.rallye.question11.question}</Text>
         </Text>
         <View style={styles.container}>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:45}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question7.reponse1} onPress={() => {
-                  rallyes_reponse.Q7 = 'A';
-                  this.props.navigation.navigate("RallyeQ8", { rallye, id_parcours, rallyes_reponse });
+              <Button buttonStyle={{borderRadius: 20, height:45}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question11.reponse1} onPress={() => {
+                  rallyes_reponse.Q11 = 'A';
+                  this.props.navigation.navigate("RallyeQ12", { rallye, id_parcours, rallyes_reponse });
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question7.reponse2} onPress={() => {
-                  rallyes_reponse.Q7 = 'B';
-                  this.props.navigation.navigate("RallyeQ8", { rallye, id_parcours, rallyes_reponse });
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question11.reponse2} onPress={() => {
+                  rallyes_reponse.Q11 = 'B';
+                  this.props.navigation.navigate("RallyeQ12", { rallye, id_parcours, rallyes_reponse });
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question7.reponse3} onPress={() => {
-                  rallyes_reponse.Q7 = 'C';
-                  this.props.navigation.navigate("RallyeQ8", { rallye, id_parcours, rallyes_reponse });
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question11.reponse3} onPress={() => {
+                  rallyes_reponse.Q11 = 'C';
+                  this.props.navigation.navigate("RallyeQ12", { rallye, id_parcours, rallyes_reponse });
               }}/>
           </View>
           <View style={styles.button}>
-              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question7.reponse4} onPress={() => {
-                  rallyes_reponse.Q7 = 'D';
-                  this.props.navigation.navigate("RallyeQ8", { rallye, id_parcours, rallyes_reponse });
+              <Button buttonStyle={{borderRadius: 20, height:45}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question11.reponse4} onPress={() => {
+                  rallyes_reponse.Q11 = 'D';
+                  this.props.navigation.navigate("RallyeQ12", { rallye, id_parcours, rallyes_reponse });
               }}/>
           </View>
         </View>
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
       marginTop: 15,
       paddingLeft: 20,
       paddingRight: 20,
-      width: 140,
-      height: 220,
+      width: 330,
+      height: 150,
       alignSelf: 'center'
     },
      innerText:{
