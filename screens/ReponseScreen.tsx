@@ -1,6 +1,6 @@
 import React from 'react'
-import { View } from '../components/Themed';
-import { StyleSheet } from 'react-native'
+import { Text, View } from '../components/Themed';
+import { StyleSheet, ScrollView } from 'react-native'
 import { RootStackParamList } from '../types';
 import { StackScreenProps } from '@react-navigation/stack';
 import Constants from 'expo-constants';
@@ -14,23 +14,90 @@ export class ReponseScreen extends React.Component<Props> {
     super(props)
   }
   render() {
-    return (
-      <View style={styles.main_container}>
-         <View style={styles.Button}>
-          <Button type="clear" onPress={() => this.props.navigation.goBack()} title="Annuler " />
-         </View>
-      </View>
-    )
+    const id_parcours = this.props.route.params.id_parcours;
+    const question = this.props.route.params.question;
+    const rallye = this.props.route.params.rallye;
+    const rallyes_reponse = this.props.route.params.rallyes_reponse;
+    var score = this.props.route.params.score;
+    const question_suivante = this.props.route.params.question_suivante;
+    
+    if (rallyes_reponse[question] == rallye.rallye[question].solution) {
+      score = score + 1
+      return (
+        <View style={styles.main_container}>
+         <ScrollView> 
+            <View style={styles.header_container}>
+                <Text style={styles.title_text}>Bonne réponse !</Text>
+                <Text style={styles.title2_text}>Réponse : {rallye.rallye[question].solution_text}</Text>
+            </View>
+            <Text style={styles.texte}>
+              <Text style={styles.innerText}>Pour en savoir plus : </Text>
+              {rallye.rallye[question].explication}
+            </Text>
+            <View style={styles.Button}>
+              <Button type="clear" onPress={() => this.props.navigation.navigate(question_suivante, {id_parcours, rallye, rallyes_reponse, score})} title="Continuer " />
+            </View>
+         </ScrollView> 
+        </View>
+      )
+    }
+    else {
+      return (
+        <View style={styles.main_container}>
+         <ScrollView> 
+            <View style={styles.header_container}>
+                <Text style={styles.title_text}>Oups, mauvaise réponse !</Text>
+                <Text style={styles.title2_text}>Bonne réponse : {rallye.rallye[question].solution_text}</Text>
+            </View>
+            <Text style={styles.texte}>
+              <Text style={styles.innerText}>Pour en savoir plus : </Text>
+              {rallye.rallye[question].explication}
+            </Text>
+            <View style={styles.Button}>
+              <Button type="clear" onPress={() => this.props.navigation.navigate(question_suivante, {id_parcours, rallye, rallyes_reponse, score})} title="Continuer " />
+            </View>
+         </ScrollView> 
+        </View>
+      )
+    } 
   }
 }
 
 const styles = StyleSheet.create({
   main_container: {
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 2*Constants.statusBarHeight,
+    paddingBottom: Constants.statusBarHeight,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  header_container: {
+    flex: 1
   },
   Button: {
+    marginTop: 15,
     flex:1,
-    alignContent: 'center',
-  }
+  },
+  innerText:{
+      fontSize: 20,
+      fontWeight: 'bold',
+      textAlign: 'left',
+    },
+    texte: {
+      marginTop: 20,
+      fontSize: 20,
+      fontStyle: 'italic',
+      textAlign: 'left',
+    },
+    title_text: {
+      fontWeight: 'bold',
+      fontSize: 38,
+      textAlign: 'center'
+  },
+  title2_text: {
+      marginTop: 20,
+      fontWeight: 'bold',
+      fontSize: 24,
+      textAlign: 'left'
+  },
 })

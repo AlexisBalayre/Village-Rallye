@@ -60,6 +60,7 @@ export type RootStackParamList = {
       photo2: object,
       rallye: object,
     },
+    scroll: boolean,
     id_parcours: number,
     rallyes_reponse: object
   };

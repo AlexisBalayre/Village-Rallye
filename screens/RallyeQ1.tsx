@@ -4,7 +4,6 @@ import { StyleSheet, Image, ScrollView} from 'react-native';
 import { Button, colors } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
-import Constants from 'expo-constants';
 
 type Props = StackScreenProps<RootStackParamList, 'RallyeQ1'>;
 
@@ -31,7 +30,7 @@ export class RallyeQ1 extends React.Component<Props> {
     this.ChangeColor4 = this.ChangeColor4.bind(this);
   }
 
-  ChangeColor1(rep){
+  ChangeColor1(rep:string){
       if (this.state.backgroundColor1 == '#2196F3') {
         if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
           var reponses = this.state.nombre_reponses + 1
@@ -160,8 +159,28 @@ export class RallyeQ1 extends React.Component<Props> {
   }
 
   render() {
+    const question_suivante = "RallyeQ2";
+    const question = "question1";
+    const score = 0;
     const id_parcours = this.props.route.params.id_parcours;
     const rallye = this.props.route.params.rallye;
+    var rallyes_reponse = {
+    };
+    var reponse = "";
+    var list_reponses = [this.state.rallyes_reponse1, this.state.rallyes_reponse2, this.state.rallyes_reponse3, this.state.rallyes_reponse4];
+    var x;
+    for (x in list_reponses) {
+      if (list_reponses[x] != "") {
+        if (reponse != "") {
+          reponse = reponse + '-' + list_reponses[x]
+        }
+        else {
+          reponse = reponse + list_reponses[x]
+        }
+      }
+    };
+    rallyes_reponse['question1'] = reponse;
+
     return (
       <View style={styles.main_container}>
         <ScrollView ref={this.ref} onContentSizeChange={() => this.ref.current.scrollToEnd({ animated: true })}>
@@ -197,7 +216,7 @@ export class RallyeQ1 extends React.Component<Props> {
           </View>
           <View style={{flex:1, marginTop: 20, display: this.state.display}}>
               <View style={styles.button}>
-                  <Button buttonStyle={{flex:1, height:70, backgroundColor: "green"}} containerStyle={{ flex:1}} title="CONFIRMER"  onPress={() => {}}/>
+                  <Button buttonStyle={{flex:1, height:70, backgroundColor: "green"}} containerStyle={{ flex:1}} title="CONFIRMER"  onPress={() => {this.props.navigation.navigate('ReponseScreen', {id_parcours, rallye, question, rallyes_reponse, score, question_suivante})}}/>
               </View>
           </View>
         </ScrollView>
@@ -207,15 +226,6 @@ export class RallyeQ1 extends React.Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    main_container: {
-      flex: 1,
-    },
-    container: {
-      flex:1,
-      marginTop: 10,
-      paddingLeft: 20,
-      paddingRight: 20,
-    },
     image: {
       flex:1,
       marginTop: 15,
@@ -224,6 +234,15 @@ const styles = StyleSheet.create({
       width: 330,
       height: 190,
       alignSelf: 'center'
+    },
+    main_container: {
+      flex: 1,
+    },
+    container: {
+      flex:1,
+      marginTop: 10,
+      paddingLeft: 20,
+      paddingRight: 20,
     },
     innerText:{
       paddingLeft: 20,

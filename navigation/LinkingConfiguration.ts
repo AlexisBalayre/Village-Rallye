@@ -130,26 +130,6 @@ export default {
               RallyeQ2: 'Rallye Q16',
             },
           },
-          RallyeQ17: {
-            screens: {
-              RallyeQ2: 'Rallye Q17',
-            },
-          },
-          RallyeQ18: {
-            screens: {
-              RallyeQ2: 'Rallye Q18',
-            },
-          },
-          RallyeQ19: {
-            screens: {
-              RallyeQ2: 'Rallye Q19',
-            },
-          },
-          RallyeQ20: {
-            screens: {
-              RallyeQ2: 'Rallye Q20',
-            },
-          },
         }
       },
       RechercheScreen: {

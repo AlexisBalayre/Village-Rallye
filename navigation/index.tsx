@@ -27,10 +27,6 @@ import { RallyeQ13 } from '../screens/RallyeQ13';
 import { RallyeQ14 } from '../screens/RallyeQ14';
 import { RallyeQ15 } from '../screens/RallyeQ15';
 import { RallyeQ16 } from '../screens/RallyeQ16';
-import { RallyeQ17 } from '../screens/RallyeQ17';
-import { RallyeQ18 } from '../screens/RallyeQ18';
-import { RallyeQ19 } from '../screens/RallyeQ19';
-import { RallyeQ20 } from '../screens/RallyeQ20';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -76,10 +72,6 @@ function MainStackScreen() {
       <MainStack.Screen name="RallyeQ14" component={RallyeQ14} options={{ title: 'Question 14', gestureEnabled:false, headerLeft: () => null }}/>
       <MainStack.Screen name="RallyeQ15" component={RallyeQ15} options={{ title: 'Question 15', gestureEnabled:false, headerLeft: () => null }}/>
       <MainStack.Screen name="RallyeQ16" component={RallyeQ16} options={{ title: 'Question 16', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ17" component={RallyeQ17} options={{ title: 'Question 17', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ18" component={RallyeQ18} options={{ title: 'Question 18', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ19" component={RallyeQ19} options={{ title: 'Question 19', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ20" component={RallyeQ20} options={{ title: 'Question 20', gestureEnabled:false, headerLeft: () => null }}/>
     </MainStack.Navigator>
   );
 }
@@ -93,7 +85,7 @@ function RootStackScreen() {
         options={{ headerShown: false }}
       />
       <RootStack.Screen name="RechercheScreen" component={RechercheScreen} options={{ headerShown: false }}/>
-      <RootStack.Screen name="ReponseScreen" component={ReponseScreen} options={{ headerShown: false }}/>
+      <RootStack.Screen name="ReponseScreen" component={ReponseScreen} options={{ headerShown: false, gestureEnabled:false}}/>
     </RootStack.Navigator>
   );
 }
