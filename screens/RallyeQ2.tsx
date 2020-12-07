@@ -29,7 +29,6 @@ export class RallyeQ2 extends React.Component<Props> {
       rallyes_reponse7: '',
       display: 'none'
     };
-    this.scroll = null;
     this.ref = React.createRef();
     this.ChangeColor1 = this.ChangeColor1.bind(this);
     this.ChangeColor2 = this.ChangeColor2.bind(this);

@@ -22,12 +22,17 @@ export class RallyeQ1 extends React.Component<Props> {
       rallyes_reponse4: '',
       display: 'none'
     };
-    this.scroll = null;
     this.ref = React.createRef();
     this.ChangeColor1 = this.ChangeColor1.bind(this);
     this.ChangeColor2 = this.ChangeColor2.bind(this);
     this.ChangeColor3 = this.ChangeColor3.bind(this);
     this.ChangeColor4 = this.ChangeColor4.bind(this);
+  }
+
+  componentDidMount() {
+    if(this.ref.current) {
+      this.ref.current.scrollTo({x: 0, y: 0, animated: true});
+    }
   }
 
   ChangeColor1(rep:string){
