@@ -27,6 +27,7 @@ import { RallyeQ13 } from '../screens/RallyeQ13';
 import { RallyeQ14 } from '../screens/RallyeQ14';
 import { RallyeQ15 } from '../screens/RallyeQ15';
 import { RallyeQ16 } from '../screens/RallyeQ16';
+import { Fin } from '../screens/Fin';
 import { RootStackParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -72,6 +73,7 @@ function MainStackScreen() {
       <MainStack.Screen name="RallyeQ14" component={RallyeQ14} options={{ title: 'Question 14', gestureEnabled:false, headerLeft: () => null }}/>
       <MainStack.Screen name="RallyeQ15" component={RallyeQ15} options={{ title: 'Question 15', gestureEnabled:false, headerLeft: () => null }}/>
       <MainStack.Screen name="RallyeQ16" component={RallyeQ16} options={{ title: 'Question 16', gestureEnabled:false, headerLeft: () => null }}/>
+      <MainStack.Screen name="Fin" component={Fin} options={{ title: 'Résultats', gestureEnabled:false, headerLeft: () => null }}/>
     </MainStack.Navigator>
   );
 }

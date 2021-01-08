@@ -130,6 +130,11 @@ export default {
               RallyeQ2: 'Rallye Q16',
             },
           },
+          Fin: {
+            screens: {
+              Fin: 'Résultats',
+            },
+          },
         }
       },
       RechercheScreen: {

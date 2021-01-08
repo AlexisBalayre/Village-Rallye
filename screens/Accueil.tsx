@@ -8,7 +8,6 @@ import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-
 type Props = StackScreenProps<RootStackParamList, 'Accueil'>;
 
 export class Accueil extends React.Component<Props> {

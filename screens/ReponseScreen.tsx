@@ -13,6 +13,7 @@ export class ReponseScreen extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }
+  
   render() {
     const id_parcours = this.props.route.params.id_parcours;
     const question = this.props.route.params.question;
@@ -21,8 +22,33 @@ export class ReponseScreen extends React.Component<Props> {
     var score = this.props.route.params.score;
     const question_suivante = this.props.route.params.question_suivante;
     
-    if (rallyes_reponse[question] == rallye.rallye[question].solution) {
-      score = score + 1
+
+    // Liste avec les reponses correctes 
+    rep_correct = [];
+    for (x in rallye.rallye[question].solution) {
+      if (rallye.rallye[question].solution[x] != '-') {
+        rep_correct.push(rallye.rallye[question].solution[x])
+      }
+    }
+
+    // Verification des réponses 
+    var x;
+    var y;
+    var rep;
+    var point = 0;
+    for (x in rallyes_reponse[question]){
+      for (y in rep_correct) {
+        if (rallyes_reponse[question][x] == rep_correct[y]) {
+          point = point + 1
+        }
+      }
+    }
+      
+    // Calcul du score total 
+    score = score + point
+
+    // Affichage de la reponse
+    if (point == rallye.rallye[question].point) {
       return (
         <View style={styles.main_container}>
          <ScrollView> 

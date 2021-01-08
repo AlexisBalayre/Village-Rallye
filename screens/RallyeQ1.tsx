@@ -171,17 +171,13 @@ export class RallyeQ1 extends React.Component<Props> {
     const rallye = this.props.route.params.rallye;
     var rallyes_reponse = {
     };
-    var reponse = "";
+    var reponse = []
     var list_reponses = [this.state.rallyes_reponse1, this.state.rallyes_reponse2, this.state.rallyes_reponse3, this.state.rallyes_reponse4];
     var x;
+    // Suppression des valeurs vides 
     for (x in list_reponses) {
-      if (list_reponses[x] != "") {
-        if (reponse != "") {
-          reponse = reponse + '-' + list_reponses[x]
-        }
-        else {
-          reponse = reponse + list_reponses[x]
-        }
+      if (list_reponses[x] != ''){
+        reponse.push(list_reponses[x]);
       }
     };
     rallyes_reponse['question1'] = reponse;
