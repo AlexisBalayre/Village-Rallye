@@ -253,6 +253,7 @@ var data = {
         rallye: {
             statut: true, // A ne pas modifier 
             question1: {
+                id: 1,
                 photo: require("../assets/images/Montfort/Q1.png"), // A ne pas modifier 
                 enonce: "Vous êtes sur la place de l’église.\n\n",
                 question: "Une date est inscrite sur la façade de l’église, quelle est-elle ?",
@@ -266,11 +267,12 @@ var data = {
                 reponse4: '1063 '
             },
             question2: {
+                id: 2,
                 photo: require("../assets/images/Montfort/Q2.png"), // A ne pas modifier 
                 enonce: "Rentrez dans l’église, vous pourrez y observer 37 verrières anciennes, dont 3 sont précisément datées, ",
                 question: "quelles sont ces 3 dates ?",
                 solution: "B-C-G",
-                solution_text: '1543 – 1544 - 1574',
+                solution_text: '1543 - 1544 - 1574',
                 point: 3,
                 explication: "La particularité des 37 verrières  de l'église Saint-Pierre réside dans les nombreuses couleurs utilisées. En effet en 1540 les verriers n’utilisaient que la technique de la “grisaille”. Sur certains vitraux de cette église, vous pourrez détecter de la peinture à l'émail, un procédé qui permet la mise en valeur des détails.",
                 reponse1: "1540",
@@ -282,6 +284,7 @@ var data = {
                 reponse7: "1574"
             },
             question3: {
+                id: 3,
                 photo: require("../assets/images/Montfort/Q3.png"), // A ne pas modifier 
                 enonce: "Ressortez maintenant de l’église. Regardez l’entrée et prenez la rue qui la longe sur la droite.\nDescendez-la jusqu’à ce que sur votre gauche, vous vous trouviez devant la porte « Renaissance ».\n\n",
                 question: "Sur cette porte figurent 2 personnages : Quelle particularité distingue l’homme représenté au-dessus de cette porte ?",
@@ -295,6 +298,7 @@ var data = {
                 reponse4: "Il porte des lunettes"
             },
             question4: {
+                id: 4,
                 photo: "", // A ne pas modifier 
                 enonce: "Retournez-vous, vous êtes devant un porche de maison et une plaque indique son nom.\n\n",
                 question: "Quel est le nom de cette demeure ?",
@@ -308,6 +312,7 @@ var data = {
                 reponse4: "Les trois chandeliers"
             },
             question5: {
+                id: 5,
                 photo: require("../assets/images/Montfort/Q5.png"), // A ne pas modifier 
                 enonce: "Continuez à descendre quelques mètres la rue et tournez le dos à l’église. Autour de vous, observez bien (en hauteur, par-dessus les murs. ), sur une maison, une plaque indique que l’inventeur du “vers libre” y a vécu.\n\n",
                 question: "Mais comment se nomme cet auteur ?",
@@ -321,6 +326,7 @@ var data = {
                 reponse4: "Maurice Maeterlinck"
             },
             question6: {
+                id: 6,
                 photo: "", // A ne pas modifier 
                 enonce: "Vous avez trouvé cette maison? Trouvez maintenant son entrée et descendez la rue. Repérez les maisons autour de vous et surtout leurs devantures, notamment à main droite. Devant l’une d’entre elles, une des scènes les plus importantes d’un grand film y a été tournée. Rappelez-vous : un homme dans une malle...2 femmes....un noyé, suivi d’une résurrection !\n\n",
                 question: "Quel est le titre de ce film :",
@@ -334,8 +340,9 @@ var data = {
                 reponse4: "L’armée des ombres"
             },
             question7: {
+                id: 7,
                 photo: require("../assets/images/Montfort/Q7.png"), // A ne pas modifier 
-                enonce: "Vous êtes maintenant en bas de cette rue, allez sur la petite place. Allez au N°2... (voir photo), les lieux ont changé c’est maintenant l’hôtel Saint Laurent .La 1ère enceinte de la ville passait par le haut de la place; un chapiteau est d’ailleurs visible à l’angle du n°2. Habitée au XVIème siècle par le procureur, cette maison devint en 1790 l’Hôtel de Ville et caserne pour la maréchaussée. Elle fut, plus tard, la propriété d’un grand cinéaste, notamment le réalisateur du film cité juste avant.\n\n",
+                enonce: "Vous êtes maintenant en bas de cette rue, allez sur la petite place. Les lieux ont changé, c’est maintenant l’hôtel Saint Laurent. La 1ère enceinte de la ville passait par le haut de la place; un chapiteau est d’ailleurs visible à l’angle du n°2. Habitée au XVIème siècle par le procureur, cette maison devint en 1790 l’Hôtel de Ville et caserne pour la maréchaussée. Elle fut, plus tard, la propriété d’un grand cinéaste, notamment le réalisateur du film cité juste avant.\n\n",
                 question: "Qui est ce réalisateur ?",
                 solution: "B",
                 solution_text: 'Henri-Georges Clouzot',
@@ -347,6 +354,7 @@ var data = {
                 reponse4: "Luis Bunuel"
             },
             question8: {
+                id: 8,
                 photo: require("../assets/images/Montfort/Q8.png"), // A ne pas modifier 
                 enonce: "Vous êtes toujours sur la place, tournez le dos à l’hôtel et allez vers la rue qui descend sur votre droite. Une maison fait l’angle au numéro 1 de la rue de la moutière.\n\n",
                 question: "Durant l’été 1901 et 1902 un grand poète, y séjourna pour les vacances, de qui s’agit-il ?",
@@ -360,8 +368,9 @@ var data = {
                 reponse4: "Sully-Prudhomme"
             },
             question9: {
+                id: 9,
                 photo: require("../assets/images/Montfort/Q9.png"), // A ne pas modifier 
-                enonce: "Remontez la petite place (celle où se situe l’hôtel St Laurent) . Prenez la rue à votre droite. Plus haut dans cette rue et sur votre droite… Une belle bâtisse...Pour la trouver regardez en l’air (voir photo). Cette demeure dite « de la Reine Blanche », maison familiale du poète Adolphe de Saint-Valry accueillit à plusieurs reprises  Victor Hugo.\n\n",
+                enonce: "Remontez la petite place (celle où se situe l’hôtel St Laurent). Prenez la rue à votre droite. Plus haut dans cette rue et sur votre droite… Une belle bâtisse... Pour la trouver regardez en l’air (voir photo). Cette demeure dite « de la Reine Blanche », maison familiale du poète Adolphe de Saint-Valry accueillit à plusieurs reprises  Victor Hugo.\n\n",
                 question: "Parmi les poèmes cités, lequel est de Victor Hugo ?",
                 solution: "A",
                 solution_text: "Demain, dès l'aube",
@@ -373,6 +382,7 @@ var data = {
                 reponse4: "L'Albatros"
             },
             question10: {
+                id: 10,
                 photo: require("../assets/images/Montfort/Q10.png"), // A ne pas modifier 
                 enonce: "Continuez dans cette rue et un peu plus loin sur votre gauche à un angle, voici une des plus anciennes bâtisse de Montfort-l’Amaury…mais au fait ",
                 question: "de quand date-t-elle ? ",
@@ -386,6 +396,7 @@ var data = {
                 reponse4: "1489"
             },
             question11: {
+                id: 11,
                 photo: require("../assets/images/Montfort/Q11.png"), // A ne pas modifier 
                 enonce: "Remontez à présent cette même rue et au bout, tournez à gauche. Remontez la rue, vous vous retrouvez alors devant la place de l’église. Tournez le dos à l’église et remontez la place. Arrivé à la fourche, prenez à droite. Montez la rue jusqu’à cette ancienne porte. Elle se nomme Bardoul et porte le nom du constructeur de l’enceinte du Montfort du XIème siècle.\n\n",
                 question: "A quoi servait cette porte au XVIème siècle ? ",
@@ -399,6 +410,7 @@ var data = {
                 reponse4: "C’était l’entrée du château"
             },
             question12: {
+                id: 12,
                 photo: require("../assets/images/Montfort/Q12.png"), // A ne pas modifier 
                 enonce: "Faites maintenant demi-tour, redescendez la rue (jusqu’à la fourche précédemment rencontrée);\n\nVous laissez à main droite un buste (voir photo) qui représente Anne de Bretagne. Elle fut reine à deux reprises, ",
                 question: "mais de qui fut-elle l’épouse ?",
@@ -413,6 +425,7 @@ var data = {
                 reponse5: "Henry II"
             },
             question13: {
+                id: 13,
                 photo: require("../assets/images/Montfort/Q13.png"), // A ne pas modifier 
                 enonce: "En vous plaçant faste au buste d’Anne de Bretagne, remontez la rue à main gauche. Montez une cinquantaine de mètres, sur votre gauche vous voici devant la maison de Maurice Ravel. Cette maison est un musée depuis 1973.\n\n",
                 question: "Parmi toutes les œuvres musicales citées plus bas, quelles sont celles composées par Ravel ?",
@@ -427,6 +440,7 @@ var data = {
                 reponse5: "Clair de lune"
             },
             question14: {
+                id: 14,
                 photo: require("../assets/images/Montfort/Q14.png"), // A ne pas modifier 
                 enonce: "Maintenant, prenez la ruelle située à gauche de la maison, suivez cette ruelle jusqu’au bas des escaliers, prenez la rue en épingle à cheveux sur votre gauche - Remontez là jusqu’à la « Ruelle des Poulies », ",
                 question: "celle-ci  portait un nom différent au Moyen-Age, quel était-il ?",
@@ -440,6 +454,7 @@ var data = {
                 reponse4: "ruelle des cochons"
             },
             question15: {
+                id: 15,
                 photo: require("../assets/images/Montfort/Q15.png"), // A ne pas modifier 
                 enonce: "Faites demi-tour et remontez la ruelle des poulies puis prenez à droite. Dans cette rue, vous allez trouver sur votre droite une maison (voir photo).\n\n",
                 question: "Au XXème siècle, ce fut la maison d’un auteur bien connu. Il écrivit notamment une pièce intitulée “le Bal des voleurs”, qui est-il ?",
@@ -453,6 +468,7 @@ var data = {
                 reponse4: "Samuel Beckett"
             },
             question16: {
+                id: 16,
                 photo: require("../assets/images/Montfort/Q16.png"), // A ne pas modifier 
                 enonce: "Votre promenade s’achève....pas tout à fait...rendez-vous au cimetière car ce monument historique est peut-être un des plus beaux de Montfort. Regardez la photo …A vous de juger !\n\nDevant la porte d’accès au cimetière figure la phrase suivante :\n« Vous, qui ici passez,\nPriez Dieu pour .............. \nCe que vous êtes ils ont été\nCe que sont un jour serez »\n\n",
                 question: "Quel est le mot manquant ?",

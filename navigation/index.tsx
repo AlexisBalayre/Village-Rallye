@@ -57,23 +57,23 @@ function MainStackScreen() {
       <MainStack.Screen name="AccueilRallye" component={AccueilRallye} options={{ title: 'Accueil Rallye' }}/>
       <MainStack.Screen name="Regles" component={Regles} options={{ title: 'Règles' }}/>
       <MainStack.Screen name="RallyeEtape1" component={RallyeEtape1} options={{ title: 'Parcours' }}/>
-      <MainStack.Screen name="RallyeQ1" component={RallyeQ1} options={{ title: 'Question 1', gestureEnabled:false, headerLeft: () => null}}/>
-      <MainStack.Screen name="RallyeQ2" component={RallyeQ2} options={{ title: 'Question 2', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ3" component={RallyeQ3} options={{ title: 'Question 3', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ4" component={RallyeQ4} options={{ title: 'Question 4', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ5" component={RallyeQ5} options={{ title: 'Question 5', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ6" component={RallyeQ6} options={{ title: 'Question 6', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ7" component={RallyeQ7} options={{ title: 'Question 7', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ8" component={RallyeQ8} options={{ title: 'Question 8', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ9" component={RallyeQ9} options={{ title: 'Question 9', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ10" component={RallyeQ10} options={{ title: 'Question 10', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ11" component={RallyeQ11} options={{ title: 'Question 11', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ12" component={RallyeQ12} options={{ title: 'Question 12', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ13" component={RallyeQ13} options={{ title: 'Question 13', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ14" component={RallyeQ14} options={{ title: 'Question 14', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ15" component={RallyeQ15} options={{ title: 'Question 15', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="RallyeQ16" component={RallyeQ16} options={{ title: 'Question 16', gestureEnabled:false, headerLeft: () => null }}/>
-      <MainStack.Screen name="Fin" component={Fin} options={{ title: 'Résultats', gestureEnabled:false, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ1" component={RallyeQ1} options={{ title: 'Question 1', gestureEnabled:true, headerLeft: () => null}}/>
+      <MainStack.Screen name="RallyeQ2" component={RallyeQ2} options={{ title: 'Question 2', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ3" component={RallyeQ3} options={{ title: 'Question 3', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ4" component={RallyeQ4} options={{ title: 'Question 4', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ5" component={RallyeQ5} options={{ title: 'Question 5', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ6" component={RallyeQ6} options={{ title: 'Question 6', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ7" component={RallyeQ7} options={{ title: 'Question 7', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ8" component={RallyeQ8} options={{ title: 'Question 8', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ9" component={RallyeQ9} options={{ title: 'Question 9', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ10" component={RallyeQ10} options={{ title: 'Question 10', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ11" component={RallyeQ11} options={{ title: 'Question 11', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ12" component={RallyeQ12} options={{ title: 'Question 12', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ13" component={RallyeQ13} options={{ title: 'Question 13', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ14" component={RallyeQ14} options={{ title: 'Question 14', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ15" component={RallyeQ15} options={{ title: 'Question 15', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="RallyeQ16" component={RallyeQ16} options={{ title: 'Question 16', gestureEnabled:true, headerLeft: () => null }}/>
+      <MainStack.Screen name="Fin" component={Fin} options={{ title: 'Résultats', gestureEnabled:true, headerLeft: () => null }}/>
     </MainStack.Navigator>
   );
 }
@@ -87,7 +87,7 @@ function RootStackScreen() {
         options={{ headerShown: false }}
       />
       <RootStack.Screen name="RechercheScreen" component={RechercheScreen} options={{ headerShown: false }}/>
-      <RootStack.Screen name="ReponseScreen" component={ReponseScreen} options={{ headerShown: false, gestureEnabled:false}}/>
+      <RootStack.Screen name="ReponseScreen" component={ReponseScreen} options={{ headerShown: false, gestureEnabled:true}}/>
     </RootStack.Navigator>
   );
 }

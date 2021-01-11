@@ -38,7 +38,7 @@ export class RallyeQ7 extends React.Component<Props> {
           if (reponses == this.props.route.params.rallye.rallye.question7.point) {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor1: 'red',
+              backgroundColor1: 'black',
               rallyes_reponse1: rep,
               display: 'true'
             })
@@ -46,7 +46,7 @@ export class RallyeQ7 extends React.Component<Props> {
           else {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor1: 'red',
+              backgroundColor1: 'black',
               rallyes_reponse1: rep
             }) 
           }
@@ -70,7 +70,7 @@ export class RallyeQ7 extends React.Component<Props> {
           if (reponses == this.props.route.params.rallye.rallye.question7.point) {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor2: 'red',
+              backgroundColor2: 'black',
               rallyes_reponse2: rep,
               display: 'true'
             }) 
@@ -78,7 +78,7 @@ export class RallyeQ7 extends React.Component<Props> {
           else {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor2: 'red',
+              backgroundColor2: 'black',
               rallyes_reponse2: rep,
             }) 
           }
@@ -102,7 +102,7 @@ export class RallyeQ7 extends React.Component<Props> {
           if (reponses == this.props.route.params.rallye.rallye.question7.point) {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor3: 'red',
+              backgroundColor3: 'black',
               rallyes_reponse3: rep,
               display: 'true'
             })
@@ -110,7 +110,7 @@ export class RallyeQ7 extends React.Component<Props> {
           else {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor3: 'red',
+              backgroundColor3: 'black',
               rallyes_reponse3: rep
             }) 
           }
@@ -134,7 +134,7 @@ export class RallyeQ7 extends React.Component<Props> {
         if (reponses == this.props.route.params.rallye.rallye.question7.point) {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor4: 'red',
+              backgroundColor4: 'black',
               rallyes_reponse4: rep,
               display: 'true'
             }) 
@@ -142,7 +142,7 @@ export class RallyeQ7 extends React.Component<Props> {
           else {
             this.setState({
               nombre_reponses: reponses,
-              backgroundColor4: 'red',
+              backgroundColor4: 'black',
               rallyes_reponse4: rep
             }) 
           }
@@ -212,7 +212,7 @@ export class RallyeQ7 extends React.Component<Props> {
           </View>
           <View style={{flex:1, marginTop: 20, display: this.state.display}}>
               <View style={styles.button}>
-                  <Button buttonStyle={{flex:1, height:70, backgroundColor: "green"}} containerStyle={{ flex:1}} title="CONFIRMER"  onPress={() => {this.props.navigation.navigate('ReponseScreen', {id_parcours, rallye, question, rallyes_reponse, score, question_suivante})}}/>
+                  <Button buttonStyle={{flex:1, height:70, borderRadius:0, backgroundColor: "black"}} containerStyle={{ borderRadius: 0, flex:1}} title="CONFIRMER"  onPress={() => {this.props.navigation.navigate('ReponseScreen', {id_parcours, rallye, question, rallyes_reponse, score, question_suivante})}}/>
               </View>
           </View>
         </ScrollView>

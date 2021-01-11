@@ -3,9 +3,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Button } from 'react-native-elements';
 import Rallyes from '../Helpers/RallyesData';
-import Constants from 'expo-constants';
 
 export interface Props {
     displayCity: Function;
