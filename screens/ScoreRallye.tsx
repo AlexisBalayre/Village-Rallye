@@ -7,9 +7,9 @@ import Constants from 'expo-constants';
 import { Button } from 'react-native-elements';
 
 
-type Props = StackScreenProps<RootStackParamList, 'Fin'>;
+type Props = StackScreenProps<RootStackParamList,  'ScoreRallye'>;
 
-export class Fin extends React.Component<Props> {
+export class ScoreRallye extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }

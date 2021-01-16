@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View } from '../components/Themed';
 import { StyleSheet, Image, ScrollView} from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, colors } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
-import Constants from 'expo-constants';
 
-type Props = StackScreenProps<RootStackParamList, 'RallyeQ16'>;
+type Props = StackScreenProps<RootStackParamList, 'RallyeQuestionInit'>;
 
-export class RallyeQ16 extends React.Component<Props> {
+export class RallyeQuestionInit extends React.Component<Props> {
   // Constructeur de l'objet 
   constructor(props: Props) {
     super(props)
@@ -38,7 +37,7 @@ export class RallyeQ16 extends React.Component<Props> {
     this.ChangeColor5 = this.ChangeColor5.bind(this);
     this.ChangeColor6 = this.ChangeColor6.bind(this);
     this.ChangeColor7 = this.ChangeColor7.bind(this);
-    this.nombre_propositions = this.props.route.params.rallye.rallye.question16.nombre_reponses;
+    this.nombre_propositions = this.props.route.params.rallye.rallye.question1.nombre_reponses;
     // Bouton 1
     if (this.nombre_propositions >= 1) {
       this.displayBouton1 = 'true'
@@ -93,9 +92,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 1 par pression
   ChangeColor1(rep:string){
       if (this.state.backgroundColor1 == '#2196F3') {
-        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
           var reponses = this.state.nombre_reponses + 1
-          if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+          if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor1: 'black',
@@ -126,9 +125,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 2 par pression
   ChangeColor2(rep){
       if (this.state.backgroundColor2 == '#2196F3') {
-        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
           var reponses = this.state.nombre_reponses + 1
-          if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+          if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor2: 'black',
@@ -159,9 +158,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 3 par pression
   ChangeColor3(rep){
       if (this.state.backgroundColor3 == '#2196F3') {
-        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+        if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
           var reponses = this.state.nombre_reponses + 1
-          if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+          if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor3: 'black',
@@ -192,9 +191,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 4 par pression
   ChangeColor4(rep){
     if (this.state.backgroundColor4 == '#2196F3') {
-      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
         var reponses = this.state.nombre_reponses + 1
-        if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+        if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor4: 'black',
@@ -225,9 +224,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 5 par pression
   ChangeColor5(rep){
     if (this.state.backgroundColor5 == '#2196F3') {
-      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
         var reponses = this.state.nombre_reponses + 1
-        if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+        if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor5: 'black',
@@ -258,9 +257,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 6 par pression
   ChangeColor6(rep){
     if (this.state.backgroundColor6 == '#2196F3') {
-      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
         var reponses = this.state.nombre_reponses + 1
-        if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+        if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor6: 'black',
@@ -291,9 +290,9 @@ export class RallyeQ16 extends React.Component<Props> {
   // Changement de couleur du bouton 7 par pression
   ChangeColor7(rep){
     if (this.state.backgroundColor7 == '#2196F3') {
-      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question16.point) {
+      if (this.state.nombre_reponses < this.props.route.params.rallye.rallye.question1.point) {
         var reponses = this.state.nombre_reponses + 1
-        if (reponses == this.props.route.params.rallye.rallye.question16.point) {
+        if (reponses == this.props.route.params.rallye.rallye.question1.point) {
             this.setState({
               nombre_reponses: reponses,
               backgroundColor7: 'black',
@@ -320,14 +319,14 @@ export class RallyeQ16 extends React.Component<Props> {
       }) 
     }
   }
-
+  
   // Synchronisation de l'écran 
   render() {
     // Id Question actuelle 
-    const id_question = 16;
+    const id_question = 1;
 
     // Initialisation du score
-    const score = this.props.route.params.score;;
+    const score = 0;
 
     // Id du parcours choisis 
     const id_parcours = this.props.route.params.id_parcours;
@@ -336,13 +335,14 @@ export class RallyeQ16 extends React.Component<Props> {
     const rallye = this.props.route.params.rallye
 
     // Dictionnaire 'rallyes_reponse'
-    var rallyes_reponse = this.props.route.params.rallyes_reponse;
+    var rallyes_reponse = {
+    };
 
     // Initialisation d'une liste vide 'reponse' 
     var reponse = []
 
     // Liste avec l'Id des boutons pressés
-    var list_reponses = [this.state.rallyes_reponse1, this.state.rallyes_reponse2, this.state.rallyes_reponse3, this.state.rallyes_reponse4, this.state.rallyes_reponse5, this.state.rallyes_reponse6, this.state.rallyes_reponse7];
+    var list_reponses = [this.state.rallyes_reponse1, this.state.rallyes_reponse2, this.state.rallyes_reponse3, this.state.rallyes_reponse4];
     
     // Remplissage de la liste 'reponse' à partir des valeurs non-nulles de la liste 'list_reponses'
     var x;
@@ -353,7 +353,7 @@ export class RallyeQ16 extends React.Component<Props> {
     };
 
     // Remplissage du dictionnaire 'rallyes_reponse'
-    rallyes_reponse['question16'] = reponse;
+    rallyes_reponse['question1'] = reponse;
 
     // Affichage de l'écran
     return (
@@ -361,45 +361,45 @@ export class RallyeQ16 extends React.Component<Props> {
         <ScrollView ref={this.ref} onContentSizeChange={() => this.ref.current.scrollToEnd({ animated: true })}>
           <Image
             style={styles.image}
-            source={rallye.rallye.question16.photo}
+            source={rallye.rallye.question1.photo}
           />
           <Text style={styles.texte}>
-            {rallye.rallye.question16.enonce}
-            <Text style={styles.innerText}>{rallye.rallye.question16.question}</Text>
+            {rallye.rallye.question1.enonce}
+            <Text style={styles.innerText}>{rallye.rallye.question1.question}</Text>
           </Text>
           <View style={styles.container}>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton1}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor1}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse1} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor1}} containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse1} onPress={() => {
                     this.ChangeColor1('A')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton2}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor2}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse2} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor2}}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse2} onPress={() => {
                     this.ChangeColor2('B')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton3}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor3 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse3} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor3 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse3} onPress={() => {
                     this.ChangeColor3('C')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton4}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor4 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse4} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor4 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse4} onPress={() => {
                     this.ChangeColor4('D')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton5}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor5 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse5} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor5 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse5} onPress={() => {
                     this.ChangeColor5('E')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton6}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor6 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse6} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor6 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse6} onPress={() => {
                     this.ChangeColor6('F')
                 }}/>
             </View>
             <View style={{ flex: 1, marginTop: 18, display: this.displayBouton7}}>
-                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor7 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question16.reponse7} onPress={() => {
+                <Button buttonStyle={{borderRadius: 20, height: 45, backgroundColor: this.state.backgroundColor7 }}  containerStyle={{borderRadius: 20, flex:1}} title={rallye.rallye.question1.reponse7} onPress={() => {
                     this.ChangeColor7('G')
                 }}/>
             </View>
@@ -417,15 +417,15 @@ export class RallyeQ16 extends React.Component<Props> {
 
 const styles = StyleSheet.create({
     image: {
-        flex:1,
-        marginTop: 15,
-        paddingLeft: 20,
-        paddingRight: 20,
-        width: 170,
-        height: 210,
-        alignSelf: 'center'
-      },
-     main_container: {
+      flex:1,
+      marginTop: 15,
+      paddingLeft: 20,
+      paddingRight: 20,
+      width: 330,
+      height: 190,
+      alignSelf: 'center'
+    },
+    main_container: {
       flex: 1,
     },
     container: {
@@ -450,3 +450,5 @@ const styles = StyleSheet.create({
       textAlign: 'left',
     },
 })
+
+

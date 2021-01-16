@@ -29,7 +29,7 @@ export type RootStackParamList = {
     rallye: object
   };
 
-  RallyeEtape1: {
+  ChoixParcours: {
     rallye: {
       id: number,
       title: string,
@@ -334,7 +334,79 @@ export type RootStackParamList = {
     id_parcours: number,
     rallyes_reponse: object
   };
-  Fin: {
+  RallyeQ17: {
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: object,
+    },
+    id_parcours: number,
+    rallyes_reponse: object
+  };
+  RallyeQ18: {
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: object,
+    },
+    id_parcours: number,
+    rallyes_reponse: object
+  };
+  RallyeQ19: {
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: object,
+    },
+    id_parcours: number,
+    rallyes_reponse: object
+  };
+  RallyeQ20: {
+    rallye: {
+      id: number,
+      title: string,
+      nom: string,
+      place_id: string,
+      distance: string,
+      distancevalue: number,
+      duree: string,
+      description: string,
+      statut: string,
+      photo1: object,
+      photo2: object,
+      rallye: object,
+    },
+    id_parcours: number,
+    rallyes_reponse: object
+  };
+  ScoreRallye: {
     rallye: {
       id: number,
       title: string,

@@ -5,9 +5,9 @@ import { Button } from 'react-native-elements';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 
-type Props = StackScreenProps<RootStackParamList, 'RallyeEtape1'>;
+type Props = StackScreenProps<RootStackParamList, 'ChoixParcours'>;
 
-export class RallyeEtape1 extends React.Component<Props> {
+export class ChoixParcours extends React.Component<Props> {
   constructor(props: Props) {
     super(props)
   }

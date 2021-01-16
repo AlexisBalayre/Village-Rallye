@@ -45,7 +45,7 @@ export class Regles extends React.Component<Props> {
           <View style={styles.button}>
               <Button buttonStyle={{borderRadius: 30, height:50}}  containerStyle={{borderRadius: 30}} type="outline" title='Démarrer le rallye' onPress={() => {
                   if (rallye.rallye.statut == true) {
-                    this.props.navigation.navigate("RallyeEtape1", { rallye })
+                    this.props.navigation.navigate("ChoixParcours", { rallye })
                   }
                   else {
                     Notif()
