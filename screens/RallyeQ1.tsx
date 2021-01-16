@@ -38,54 +38,62 @@ export class RallyeQ1 extends React.Component<Props> {
     this.ChangeColor6 = this.ChangeColor6.bind(this);
     this.ChangeColor7 = this.ChangeColor7.bind(this);
     this.nombre_propositions = this.props.route.params.rallye.rallye.question1.nombre_reponses;
-    // Bouton 1
-    if (this.nombre_propositions >= 1) {
-      this.displayBouton1 = 'true'
+    this.photo = this.props.route.params.rallye.rallye.question1.photo_header;
+    // Image 
+    if (this.photo == true) {
+      this.displayImage = 'flex';
     }
     else {
-      this.displayBouton1 = 'none'
+      this.displayImage = 'none';
+    }
+    // Bouton 1
+    if (this.nombre_propositions >= 1) {
+      this.displayBouton1 = 'true';
+    }
+    else {
+      this.displayBouton1 = 'none';
     }
     // Bouton 2
     if (this.nombre_propositions >= 2) {
-      this.displayBouton2 = 'true'
+      this.displayBouton2 = 'true';
     }
     else {
-      this.displayBouton2 = 'none'
+      this.displayBouton2 = 'none';
     }
     // Bouton 3
     if (this.nombre_propositions >= 3) {
-      this.displayBouton3 = 'true'
+      this.displayBouton3 = 'true';
     }
     else {
-      this.displayBouton3 = 'none'
+      this.displayBouton3 = 'none';
     }
     // Bouton 4
     if (this.nombre_propositions >= 4) {
-      this.displayBouton4 = 'true'
+      this.displayBouton4 = 'true';
     }
     else {
-      this.displayBouton4 = 'none'
+      this.displayBouton4 = 'none';
     }
     // Bouton 5
     if (this.nombre_propositions >= 5) {
-      this.displayBouton5 = 'true'
+      this.displayBouton5 = 'true';
     }
     else {
-      this.displayBouton5 = 'none'
+      this.displayBouton5 = 'none';
     }
     // Bouton 6
     if (this.nombre_propositions >= 6) {
-      this.displayBouton6 = 'true'
+      this.displayBouton6 = 'true';
     }
     else {
-      this.displayBouton6 = 'none'
+      this.displayBouton6 = 'none';
     }
     // Bouton 7
     if (this.nombre_propositions == 7) {
-      this.displayBouton7 = 'true'
+      this.displayBouton7 = 'true';
     }
     else {
-      this.displayBouton7 = 'none'
+      this.displayBouton7 = 'none';
     }
   }
 
@@ -360,7 +368,7 @@ export class RallyeQ1 extends React.Component<Props> {
       <View style={styles.main_container}>
         <ScrollView ref={this.ref} onContentSizeChange={() => this.ref.current.scrollToEnd({ animated: true })}>
           <Image
-            style={styles.image}
+            style={{flex:1, marginTop: 15, paddingLeft: 20, paddingRight: 20, width: 330, height: 190, alignSelf: 'center', display: this.displayImage}}
             source={rallye.rallye.question1.photo}
           />
           <Text style={styles.texte}>
@@ -416,39 +424,31 @@ export class RallyeQ1 extends React.Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    image: {
-      flex:1,
-      marginTop: 15,
-      paddingLeft: 20,
-      paddingRight: 20,
-      width: 330,
-      height: 190,
-      alignSelf: 'center'
-    },
-    main_container: {
-      flex: 1,
-    },
-    container: {
-      flex:1,
-      marginTop: 10,
-      paddingLeft: 20,
-      paddingRight: 20,
-    },
-    innerText:{
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 15,
-      fontSize: 21,
-      textAlign: 'left',
-      fontWeight: 'bold',
-    },
-    texte: {
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 15,
-      fontSize: 21,
-      textAlign: 'left',
-    },
+  main_container: {
+    flex: 1,
+  },
+  container: {
+    flex:1,
+    marginTop: 10,
+    marginBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  innerText:{
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 15,
+    fontSize: 21,
+    textAlign: 'left',
+    fontWeight: 'bold',
+  },
+  texte: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 15,
+    fontSize: 21,
+    textAlign: 'left',
+  },
 })
 
 

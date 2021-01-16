@@ -39,6 +39,14 @@ export class RallyeQ7 extends React.Component<Props> {
     this.ChangeColor6 = this.ChangeColor6.bind(this);
     this.ChangeColor7 = this.ChangeColor7.bind(this);
     this.nombre_propositions = this.props.route.params.rallye.rallye.question7.nombre_reponses;
+    this.photo = this.props.route.params.rallye.rallye.question7.photo_header;
+    // Image 
+    if (this.photo == true) {
+      this.displayImage = 'flex';
+    }
+    else {
+      this.displayImage = 'none';
+    }
     // Bouton 1
     if (this.nombre_propositions >= 1) {
       this.displayBouton1 = 'true'
@@ -360,7 +368,7 @@ export class RallyeQ7 extends React.Component<Props> {
       <View style={styles.main_container}>
         <ScrollView ref={this.ref} onContentSizeChange={() => this.ref.current.scrollToEnd({ animated: true })}>
           <Image
-            style={styles.image}
+            style={{flex:1, marginTop: 15, paddingLeft: 20, paddingRight: 20, width: 330, height: 190, alignSelf: 'center', display: this.displayImage}}
             source={rallye.rallye.question7.photo}
           />
           <Text style={styles.texte}>
@@ -416,37 +424,38 @@ export class RallyeQ7 extends React.Component<Props> {
 }
 
 const styles = StyleSheet.create({
-    image: {
-        flex:1,
-        marginTop: 15,
-        paddingLeft: 20,
-        paddingRight: 20,
-        width: 170,
-        height: 210,
-        alignSelf: 'center'
-      },
-     main_container: {
-      flex: 1,
-    },
-    container: {
-      flex:1,
-      marginTop: 10,
-      paddingLeft: 20,
-      paddingRight: 20,
-    },
-    innerText:{
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 15,
-      fontSize: 21,
-      textAlign: 'left',
-      fontWeight: 'bold',
-    },
-    texte: {
-      paddingLeft: 20,
-      paddingRight: 20,
-      marginTop: 15,
-      fontSize: 21,
-      textAlign: 'left',
-    },
+  image: {
+    flex:1,
+    marginTop: 15,
+    paddingLeft: 20,
+    paddingRight: 20,
+    width: 330,
+    height: 190,
+    alignSelf: 'center'
+  },
+  main_container: {
+    flex: 1,
+  },
+  container: {
+    flex:1,
+    marginTop: 10,
+    marginBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  innerText:{
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 15,
+    fontSize: 21,
+    textAlign: 'left',
+    fontWeight: 'bold',
+  },
+  texte: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginTop: 15,
+    fontSize: 21,
+    textAlign: 'left',
+  },
 })
